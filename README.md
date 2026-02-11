@@ -11,11 +11,17 @@ A public model-layer data source for OpenRouter free models.
 - Update free-model list daily.
 - Use strict free detection: all fields in `pricing` must be `0`.
 - Publish stable profile aliases in `model_layer.json`.
+- Keep `model_layer.json` schema stable for app compatibility.
+- Reorder profile candidates by capability ranking (single ranker call per run).
+- Fall back to local heuristic order when capability ranking is unavailable.
 - Keep historical snapshots in `daily_snapshots/YYYY-MM-DD.json`.
 
 - 每日更新免费模型列表。
 - 使用严格免费判定：`pricing` 所有字段都必须为 `0`。
 - 在 `model_layer.json` 中发布稳定 profile 别名。
+- 保持 `model_layer.json` 结构稳定，确保应用兼容。
+- 每次运行使用一次能力排序模型，对 profile 候选模型重排。
+- 当能力排序不可用时，自动回退到本地启发式排序。
 - 在 `daily_snapshots/YYYY-MM-DD.json` 中保留历史快照。
 
 ## Usage / 使用说明
@@ -113,6 +119,11 @@ Capability ranking behavior:
 - Override ranker via `OPENROUTER_CAPABILITY_RANKER_MODEL`
 - Disable ranker via `OPENROUTER_CAPABILITY_RANKING=false` (fallback to local heuristic order)
 - If `OPENROUTER_API_KEY` is missing, ranker call is skipped automatically (no failure).
+- 脚本每次运行只调用一次排序模型，用于按能力重排候选模型。
+- 默认排序模型：`openai/gpt-oss-120b:free`
+- 可通过 `OPENROUTER_CAPABILITY_RANKER_MODEL` 覆盖排序模型。
+- 可通过 `OPENROUTER_CAPABILITY_RANKING=false` 关闭能力排序（回退本地启发式顺序）。
+- 如果未配置 `OPENROUTER_API_KEY`，会自动跳过排序请求，不影响主流程。
 
 ## Repository structure / 目录结构
 
