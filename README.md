@@ -104,6 +104,16 @@ $env:OPENROUTER_API_KEY="your_key"
 python check_models.py
 ```
 
+Capability ranking behavior:
+
+能力排序行为：
+
+- The script calls one ranker model once per run to reorder profile candidates by capability.
+- Default ranker: `openai/gpt-oss-120b:free`
+- Override ranker via `OPENROUTER_CAPABILITY_RANKER_MODEL`
+- Disable ranker via `OPENROUTER_CAPABILITY_RANKING=false` (fallback to local heuristic order)
+- If `OPENROUTER_API_KEY` is missing, ranker call is skipped automatically (no failure).
+
 ## Repository structure / 目录结构
 
 ```text

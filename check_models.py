@@ -15,13 +15,16 @@ from typing import Any, Dict, List, Optional, Set, Tuple
 import requests
 
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/models"
+OPENROUTER_CHAT_URL = "https://openrouter.ai/api/v1/chat/completions"
 KNOWN_MODELS_FILE = Path("known_free_models.json")
 MODEL_CHANGES_FILE = Path("model_changes.json")
 MODEL_LAYER_FILE = Path("model_layer.json")
 DAILY_SNAPSHOT_DIR = Path("daily_snapshots")
 REQUEST_TIMEOUT = 30
+RANKER_REQUEST_TIMEOUT = 90
 MAX_PROFILE_CANDIDATES = 8
 LONG_CONTEXT_THRESHOLD = 65536
+DEFAULT_CAPABILITY_RANKER_MODEL = "openai/gpt-oss-120b:free"
 
 
 def now_utc() -> datetime:
@@ -215,6 +218,176 @@ def context_for_sort(entry: Dict[str, Any]) -> int:
     return value if isinstance(value, int) else 0
 
 
+def extract_first_json_object(text: str) -> Optional[Dict[str, Any]]:
+    start = text.find("{")
+    end = text.rfind("}")
+    if start == -1 or end == -1 or end <= start:
+        return None
+
+    try:
+        payload = json.loads(text[start : end + 1])
+    except json.JSONDecodeError:
+        return None
+
+    return payload if isinstance(payload, dict) else None
+
+
+def parse_ranked_model_ids(raw_content: Any, known_ids: Set[str]) -> Optional[List[str]]:
+    if isinstance(raw_content, list):
+        text_parts: List[str] = []
+        for item in raw_content:
+            if isinstance(item, dict):
+                piece = item.get("text")
+                if isinstance(piece, str):
+                    text_parts.append(piece)
+        content = "\n".join(text_parts)
+    elif isinstance(raw_content, str):
+        content = raw_content
+    else:
+        return None
+
+    payload: Optional[Dict[str, Any]] = None
+    try:
+        loaded = json.loads(content)
+        if isinstance(loaded, dict):
+            payload = loaded
+    except json.JSONDecodeError:
+        payload = extract_first_json_object(content)
+
+    if not payload:
+        return None
+
+    ranked_ids = payload.get("ranked_model_ids")
+    if not isinstance(ranked_ids, list):
+        return None
+
+    output: List[str] = []
+    seen: Set[str] = set()
+    for value in ranked_ids:
+        if not isinstance(value, str):
+            continue
+        model_id = value.strip()
+        if model_id in known_ids and model_id not in seen:
+            seen.add(model_id)
+            output.append(model_id)
+
+    if not output:
+        return None
+
+    return output
+
+
+def rank_models_by_capability_with_llm(model_index: Dict[str, Dict[str, Any]]) -> Optional[List[str]]:
+    if len(model_index) < 2:
+        return list(model_index.keys())
+
+    enabled = os.environ.get("OPENROUTER_CAPABILITY_RANKING", "true").strip().lower()
+    if enabled in {"0", "false", "no", "off"}:
+        print("Capability ranking disabled via OPENROUTER_CAPABILITY_RANKING.")
+        return None
+
+    ranker_model = os.environ.get("OPENROUTER_CAPABILITY_RANKER_MODEL", DEFAULT_CAPABILITY_RANKER_MODEL).strip()
+    if not ranker_model:
+        ranker_model = DEFAULT_CAPABILITY_RANKER_MODEL
+
+    api_key = os.environ.get("OPENROUTER_API_KEY")
+    if not api_key:
+        print("Capability ranking skipped: OPENROUTER_API_KEY is not configured.")
+        return None
+
+    rank_input: List[Dict[str, Any]] = []
+    for model_id in sorted(model_index.keys()):
+        item = model_index[model_id]
+        rank_input.append(
+            {
+                "id": model_id,
+                "name": item.get("name"),
+                "context_length": item.get("context_length"),
+                "input_modalities": item.get("input_modalities"),
+                "output_modalities": item.get("output_modalities"),
+                "tags": item.get("tags"),
+                "is_moderated": item.get("is_moderated"),
+            }
+        )
+
+    system_prompt = (
+        "You are ranking LLMs for app usage. Rank by overall model capability in descending order. "
+        "Focus on quality: reasoning, coding, instruction following, multilingual quality, "
+        "consistency, and long-context reliability. Ignore price because all models are already free."
+    )
+    user_prompt = (
+        "Return JSON only in this exact schema: "
+        '{"ranked_model_ids": ["model-id-1", "model-id-2"]}. '
+        "Include every model id exactly once, ordered strongest to weakest. "
+        f"Models:\n{json.dumps(rank_input, ensure_ascii=False)}"
+    )
+
+    headers: Dict[str, str] = {"Content-Type": "application/json"}
+    headers["Authorization"] = f"Bearer {api_key}"
+
+    request_payload = {
+        "model": ranker_model,
+        "temperature": 0,
+        "max_tokens": 2048,
+        "messages": [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+    }
+
+    try:
+        response = requests.post(
+            OPENROUTER_CHAT_URL,
+            headers=headers,
+            json=request_payload,
+            timeout=RANKER_REQUEST_TIMEOUT,
+        )
+        response.raise_for_status()
+        payload = response.json()
+    except Exception as exc:
+        print(f"Capability ranking request failed: {exc}")
+        return None
+
+    choices = payload.get("choices", [])
+    if not isinstance(choices, list) or not choices:
+        print("Capability ranking failed: no choices in response.")
+        return None
+
+    first_choice = choices[0]
+    if not isinstance(first_choice, dict):
+        print("Capability ranking failed: unexpected choice shape.")
+        return None
+
+    message = first_choice.get("message", {})
+    if not isinstance(message, dict):
+        print("Capability ranking failed: message is missing.")
+        return None
+
+    ranked_ids = parse_ranked_model_ids(message.get("content"), set(model_index.keys()))
+    if not ranked_ids:
+        print("Capability ranking failed: could not parse ranked_model_ids JSON.")
+        return None
+
+    seen = set(ranked_ids)
+    for model_id in sorted(model_index.keys()):
+        if model_id not in seen:
+            ranked_ids.append(model_id)
+
+    print(f"Capability ranking completed with model '{ranker_model}'.")
+    return ranked_ids
+
+
+def reorder_candidates(candidates: List[str], rank_index: Dict[str, int]) -> List[str]:
+    candidate_position = {model_id: i for i, model_id in enumerate(candidates)}
+    return sorted(
+        candidates,
+        key=lambda model_id: (
+            rank_index.get(model_id, 10**9),
+            candidate_position[model_id],
+        ),
+    )
+
+
 def build_profiles(model_index: Dict[str, Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
     all_ids = sorted(model_index.keys())
 
@@ -249,6 +422,13 @@ def build_profiles(model_index: Dict[str, Dict[str, Any]]) -> Dict[str, Dict[str
             model_id,
         ),
     )[:MAX_PROFILE_CANDIDATES]
+
+    ranked_ids = rank_models_by_capability_with_llm(model_index)
+    if ranked_ids:
+        rank_index = {model_id: i for i, model_id in enumerate(ranked_ids)}
+        default_candidates = reorder_candidates(default_candidates, rank_index)
+        reasoning_candidates = reorder_candidates(reasoning_candidates, rank_index)
+        long_context_candidates = reorder_candidates(long_context_candidates, rank_index)
 
     return {
         "chat.default.free": {
