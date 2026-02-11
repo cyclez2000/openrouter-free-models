@@ -1,0 +1,603 @@
+{
+  "models": {
+    "arcee-ai/trinity-large-preview:free": {
+      "context_length": 131000,
+      "id": "arcee-ai/trinity-large-preview:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Arcee AI: Trinity Large Preview (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
+    "arcee-ai/trinity-mini:free": {
+      "context_length": 131072,
+      "id": "arcee-ai/trinity-mini:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Arcee AI: Trinity Mini (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
+    "cognitivecomputations/dolphin-mistral-24b-venice-edition:free": {
+      "context_length": 32768,
+      "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Venice: Uncensored (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "text"
+      ]
+    },
+    "deepseek/deepseek-r1-0528:free": {
+      "context_length": 163840,
+      "id": "deepseek/deepseek-r1-0528:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "DeepSeek: R1 0528 (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
+    "google/gemma-3-12b-it:free": {
+      "context_length": 32768,
+      "id": "google/gemma-3-12b-it:free",
+      "input_modalities": [
+        "image",
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Google: Gemma 3 12B (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "reasoning",
+        "text",
+        "vision"
+      ]
+    },
+    "google/gemma-3-27b-it:free": {
+      "context_length": 131072,
+      "id": "google/gemma-3-27b-it:free",
+      "input_modalities": [
+        "image",
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Google: Gemma 3 27B (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text",
+        "vision"
+      ]
+    },
+    "google/gemma-3-4b-it:free": {
+      "context_length": 32768,
+      "id": "google/gemma-3-4b-it:free",
+      "input_modalities": [
+        "image",
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Google: Gemma 3 4B (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "reasoning",
+        "text",
+        "vision"
+      ]
+    },
+    "google/gemma-3n-e2b-it:free": {
+      "context_length": 8192,
+      "id": "google/gemma-3n-e2b-it:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Google: Gemma 3n 2B (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "reasoning",
+        "text"
+      ]
+    },
+    "google/gemma-3n-e4b-it:free": {
+      "context_length": 8192,
+      "id": "google/gemma-3n-e4b-it:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Google: Gemma 3n 4B (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "text"
+      ]
+    },
+    "liquid/lfm-2.5-1.2b-instruct:free": {
+      "context_length": 32768,
+      "id": "liquid/lfm-2.5-1.2b-instruct:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "LiquidAI: LFM2.5-1.2B-Instruct (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "text"
+      ]
+    },
+    "liquid/lfm-2.5-1.2b-thinking:free": {
+      "context_length": 32768,
+      "id": "liquid/lfm-2.5-1.2b-thinking:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "LiquidAI: LFM2.5-1.2B-Thinking (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "reasoning",
+        "text"
+      ]
+    },
+    "meta-llama/llama-3.2-3b-instruct:free": {
+      "context_length": 131072,
+      "id": "meta-llama/llama-3.2-3b-instruct:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Meta: Llama 3.2 3B Instruct (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
+    "meta-llama/llama-3.3-70b-instruct:free": {
+      "context_length": 128000,
+      "id": "meta-llama/llama-3.3-70b-instruct:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": true,
+      "name": "Meta: Llama 3.3 70B Instruct (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "moderated",
+        "text"
+      ]
+    },
+    "mistralai/mistral-small-3.1-24b-instruct:free": {
+      "context_length": 128000,
+      "id": "mistralai/mistral-small-3.1-24b-instruct:free",
+      "input_modalities": [
+        "image",
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Mistral: Mistral Small 3.1 24B (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text",
+        "vision"
+      ]
+    },
+    "nousresearch/hermes-3-llama-3.1-405b:free": {
+      "context_length": 131072,
+      "id": "nousresearch/hermes-3-llama-3.1-405b:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Nous: Hermes 3 405B Instruct (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
+    "nvidia/nemotron-3-nano-30b-a3b:free": {
+      "context_length": 256000,
+      "id": "nvidia/nemotron-3-nano-30b-a3b:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "NVIDIA: Nemotron 3 Nano 30B A3B (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "text"
+      ]
+    },
+    "nvidia/nemotron-nano-12b-v2-vl:free": {
+      "context_length": 128000,
+      "id": "nvidia/nemotron-nano-12b-v2-vl:free",
+      "input_modalities": [
+        "image",
+        "text",
+        "video"
+      ],
+      "is_moderated": false,
+      "name": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text",
+        "vision"
+      ]
+    },
+    "nvidia/nemotron-nano-9b-v2:free": {
+      "context_length": 128000,
+      "id": "nvidia/nemotron-nano-9b-v2:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "NVIDIA: Nemotron Nano 9B V2 (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
+    "openai/gpt-oss-120b:free": {
+      "context_length": 131072,
+      "id": "openai/gpt-oss-120b:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": true,
+      "name": "OpenAI: gpt-oss-120b (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "moderated",
+        "reasoning",
+        "text"
+      ]
+    },
+    "openai/gpt-oss-20b:free": {
+      "context_length": 131072,
+      "id": "openai/gpt-oss-20b:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": true,
+      "name": "OpenAI: gpt-oss-20b (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "moderated",
+        "reasoning",
+        "text"
+      ]
+    },
+    "openrouter/aurora-alpha": {
+      "context_length": 128000,
+      "id": "openrouter/aurora-alpha",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Aurora Alpha",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
+    "openrouter/free": {
+      "context_length": 200000,
+      "id": "openrouter/free",
+      "input_modalities": [
+        "image",
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Free Models Router",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "text",
+        "vision"
+      ]
+    },
+    "openrouter/pony-alpha": {
+      "context_length": 200000,
+      "id": "openrouter/pony-alpha",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Pony Alpha",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
+    "qwen/qwen3-4b:free": {
+      "context_length": 40960,
+      "id": "qwen/qwen3-4b:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Qwen: Qwen3 4B (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "reasoning",
+        "text"
+      ]
+    },
+    "qwen/qwen3-coder:free": {
+      "context_length": 262000,
+      "id": "qwen/qwen3-coder:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Qwen: Qwen3 Coder 480B A35B (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
+    "qwen/qwen3-next-80b-a3b-instruct:free": {
+      "context_length": 262144,
+      "id": "qwen/qwen3-next-80b-a3b-instruct:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Qwen: Qwen3 Next 80B A3B Instruct (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
+    "stepfun/step-3.5-flash:free": {
+      "context_length": 256000,
+      "id": "stepfun/step-3.5-flash:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "StepFun: Step 3.5 Flash (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
+    "tngtech/deepseek-r1t-chimera:free": {
+      "context_length": 163840,
+      "id": "tngtech/deepseek-r1t-chimera:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "TNG: DeepSeek R1T Chimera (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
+    "tngtech/deepseek-r1t2-chimera:free": {
+      "context_length": 163840,
+      "id": "tngtech/deepseek-r1t2-chimera:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "TNG: DeepSeek R1T2 Chimera (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
+    "tngtech/tng-r1t-chimera:free": {
+      "context_length": 163840,
+      "id": "tngtech/tng-r1t-chimera:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "TNG: R1T Chimera (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
+    "upstage/solar-pro-3:free": {
+      "context_length": 128000,
+      "id": "upstage/solar-pro-3:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Upstage: Solar Pro 3 (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "text"
+      ]
+    },
+    "z-ai/glm-4.5-air:free": {
+      "context_length": 131072,
+      "id": "z-ai/glm-4.5-air:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Z.AI: GLM 4.5 Air (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    }
+  },
+  "profiles": {
+    "chat.default.free": {
+      "candidate_model_ids": [
+        "meta-llama/llama-3.3-70b-instruct:free",
+        "nvidia/nemotron-3-nano-30b-a3b:free",
+        "openrouter/free",
+        "upstage/solar-pro-3:free",
+        "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+        "liquid/lfm-2.5-1.2b-instruct:free",
+        "google/gemma-3n-e4b-it:free",
+        "openai/gpt-oss-120b:free"
+      ],
+      "description": "General-purpose free chat profile.",
+      "selection": "ordered-fallback"
+    },
+    "chat.longctx.free": {
+      "candidate_model_ids": [
+        "qwen/qwen3-next-80b-a3b-instruct:free",
+        "qwen/qwen3-coder:free",
+        "nvidia/nemotron-3-nano-30b-a3b:free",
+        "stepfun/step-3.5-flash:free",
+        "openrouter/free",
+        "openrouter/pony-alpha",
+        "deepseek/deepseek-r1-0528:free",
+        "tngtech/deepseek-r1t-chimera:free"
+      ],
+      "description": "Long-context free chat profile.",
+      "selection": "ordered-fallback"
+    },
+    "chat.reasoning.free": {
+      "candidate_model_ids": [
+        "openai/gpt-oss-120b:free",
+        "openai/gpt-oss-20b:free",
+        "qwen/qwen3-next-80b-a3b-instruct:free",
+        "qwen/qwen3-coder:free",
+        "stepfun/step-3.5-flash:free",
+        "openrouter/pony-alpha",
+        "deepseek/deepseek-r1-0528:free",
+        "tngtech/deepseek-r1t-chimera:free"
+      ],
+      "description": "Reasoning-focused free chat profile.",
+      "selection": "ordered-fallback"
+    }
+  },
+  "schema_version": "1.0",
+  "source": {
+    "endpoint": "https://openrouter.ai/api/v1/models",
+    "provider": "openrouter"
+  },
+  "stats": {
+    "free_model_count": 32,
+    "profile_count": 3
+  },
+  "updated_at": "2026-02-11T02:50:56.378791Z"
+}

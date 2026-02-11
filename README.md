@@ -1,81 +1,96 @@
-﻿# OpenRouter Free Models Tracker / OpenRouter 免费模型追踪器
+﻿# OpenRouter Free Models Layer / OpenRouter 免费模型层
 
-Track OpenRouter free models every day with GitHub Actions, open issues on changes, and keep a daily snapshot history in the repo.
+Last revised: `2026-02-11`
 
-通过 GitHub Actions 每日检测 OpenRouter 免费模型；当列表变化时自动创建 Issue，并将每日快照记录到仓库中。
+A public model-layer data source for OpenRouter free models.
+
+一个面向应用侧的公开模型层数据源，聚合 OpenRouter 免费模型。
 
 ## What this project does / 项目功能
 
-- Daily check at `00:00 UTC` (`08:00` China Standard Time).
-- Strict free-model detection (all pricing fields must be `0`).
-- Auto issue creation when free-model list changes.
-- Daily snapshot persisted to `daily_snapshots/YYYY-MM-DD.json`.
+- Update free-model list daily.
+- Use strict free detection: all fields in `pricing` must be `0`.
+- Publish stable profile aliases in `model_layer.json`.
+- Keep historical snapshots in `daily_snapshots/YYYY-MM-DD.json`.
 
-- 每天 `UTC 00:00`（北京时间 `08:00`）自动检测。
-- 严格免费判定（`pricing` 中所有价格字段必须是 `0`）。
-- 免费模型有变动时自动创建 Issue。
-- 每日快照保存到 `daily_snapshots/YYYY-MM-DD.json`。
+- 每日更新免费模型列表。
+- 使用严格免费判定：`pricing` 所有字段都必须为 `0`。
+- 在 `model_layer.json` 中发布稳定 profile 别名。
+- 在 `daily_snapshots/YYYY-MM-DD.json` 中保留历史快照。
 
-## Accuracy notes / 准确性说明
+## Usage / 使用说明
 
-The old logic used a threshold (`<= 0.0001`) and incorrectly marked many low-price models as free.
+### 1) Get model layer file / 获取模型层文件
 
-旧逻辑使用阈值（`<= 0.0001`），会把大量低价模型误判为免费。
+`https://raw.githubusercontent.com/<owner>/<repo>/main/model_layer.json`
 
-Current logic checks:
+### 2) Route by profile / 按 profile 路由
 
-当前逻辑：
+Use profile aliases instead of hard-coded model IDs.
 
-1. `pricing.prompt == 0`
-2. `pricing.completion == 0`
-3. Every other pricing field in `pricing` is also `0`
+应用请使用 profile 别名，不要写死具体模型 ID。
 
-This avoids false positives from very cheap but paid models.
+Built-in profiles:
 
-这样可避免“价格很低但非免费”的误判。
+内置 profile：
 
-## Repository structure / 目录结构
+- `chat.default.free`
+- `chat.reasoning.free`
+- `chat.longctx.free`
 
-```text
-openrouter-free-models/
-├── .github/workflows/check-free-models.yml
-├── check_models.py
-├── known_free_models.json
-├── daily_snapshots/
-│   └── YYYY-MM-DD.json
-├── requirements.txt
-└── README.md
+Each profile has ordered `candidate_model_ids` for fallback.
+
+每个 profile 都有有序 `candidate_model_ids` 用于降级。
+
+### 3) Refresh strategy / 刷新策略
+
+- Refresh once per day.
+- Cache for 24 hours locally.
+- Keep previous cache when fetch fails.
+
+- 每天刷新一次。
+- 本地缓存 24 小时。
+- 拉取失败时继续使用上一版缓存。
+
+## Model Layer Contract / 模型层约定
+
+Top-level keys:
+
+顶层字段：
+
+- `schema_version`
+- `updated_at`
+- `stats`
+- `profiles`
+- `models`
+
+Profile example:
+
+profile 示例：
+
+```json
+{
+  "chat.default.free": {
+    "description": "General-purpose free chat profile.",
+    "selection": "ordered-fallback",
+    "candidate_model_ids": ["model-a:free", "model-b:free"]
+  }
+}
 ```
 
-## Setup / 配置步骤
+## Outputs / 输出文件
 
-### 1) Create your repo / 创建你的仓库
+- `model_layer.json`: app-facing model layer.
+- `known_free_models.json`: latest baseline.
+- `daily_snapshots/YYYY-MM-DD.json`: daily snapshot history.
+- `model_changes.json`: run-level change details.
 
-Fork this project or push it to your own GitHub repo.
+- `model_layer.json`：应用侧使用的模型层文件。
+- `known_free_models.json`：最新基线。
+- `daily_snapshots/YYYY-MM-DD.json`：每日快照历史。
+- `model_changes.json`：单次运行差异细节。
 
-Fork 本项目，或推送到你自己的 GitHub 仓库。
-
-### 2) Optional API key / 可选 API Key
-
-OpenRouter models endpoint is public, but setting a key is recommended for higher limits.
-
-OpenRouter 模型接口可匿名访问，但建议配置 Key 以获得更高请求限额。
-
-- Go to <https://openrouter.ai/keys>
-- In GitHub repo: `Settings -> Secrets and variables -> Actions`
-- Add secret `OPENROUTER_API_KEY`
-
-### 3) Enable workflow / 启用工作流
-
-- Open repo `Actions`
-- Enable `Check OpenRouter Free Models`
-- You can click `Run workflow` for a manual run
-
-- 进入仓库 `Actions`
-- 启用 `Check OpenRouter Free Models`
-- 可手动点击 `Run workflow` 触发一次
-
-## Local run / 本地运行
+## Maintainer Notes / 维护者说明
 
 ```bash
 pip install -r requirements.txt
@@ -89,25 +104,18 @@ $env:OPENROUTER_API_KEY="your_key"
 python check_models.py
 ```
 
-## Outputs / 输出文件
+## Repository structure / 目录结构
 
-- `known_free_models.json`: latest baseline of free models.
-- `daily_snapshots/YYYY-MM-DD.json`: daily recorded result.
-- `model_changes.json`: run-level diff details (local/action temp artifact).
-
-- `known_free_models.json`：当前免费模型基线。
-- `daily_snapshots/YYYY-MM-DD.json`：按天记录的检测结果。
-- `model_changes.json`：本次运行的差异细节（本地/Action 临时产物）。
-
-## GitHub Action behavior / Action 行为
-
-- Runs daily and on manual dispatch.
-- Creates an issue only when free-model set changed.
-- Commits `known_free_models.json` and `daily_snapshots/*` when needed.
-
-- 每日和手动触发都会运行。
-- 仅在免费模型集合变化时创建 Issue。
-- 在需要时提交 `known_free_models.json` 和 `daily_snapshots/*`。
+```text
+openrouter-free-models/
+├── check_models.py
+├── known_free_models.json
+├── model_layer.json
+├── daily_snapshots/
+│   └── YYYY-MM-DD.json
+├── requirements.txt
+└── README.md
+```
 
 ## License / 许可
 

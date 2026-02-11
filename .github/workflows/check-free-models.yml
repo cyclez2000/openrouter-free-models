@@ -60,11 +60,11 @@ jobs:
             core.info(`Created issue #${issue.data.number}: ${issue.data.html_url}`);
 
       - name: Commit model state and daily snapshot
-        if: steps.check.outputs.has_changes == 'true' || steps.check.outputs.snapshot_updated == 'true'
+        if: steps.check.outputs.has_changes == 'true' || steps.check.outputs.snapshot_updated == 'true' || steps.check.outputs.model_layer_updated == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add known_free_models.json daily_snapshots
+          git add known_free_models.json daily_snapshots model_layer.json
           git diff --quiet && git diff --staged --quiet || git commit -m "chore: record free model snapshot [skip ci]"
           git push
 
@@ -77,3 +77,5 @@ jobs:
           echo "- Removed: ${{ steps.check.outputs.removed_count }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- Snapshot file: ${{ steps.check.outputs.snapshot_path }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- Snapshot updated: ${{ steps.check.outputs.snapshot_updated }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Model layer file: ${{ steps.check.outputs.model_layer_path }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Model layer updated: ${{ steps.check.outputs.model_layer_updated }}" >> "$GITHUB_STEP_SUMMARY"

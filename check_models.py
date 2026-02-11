@@ -10,15 +10,18 @@ import os
 from datetime import datetime, timezone
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Set, Tuple
 
 import requests
 
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/models"
 KNOWN_MODELS_FILE = Path("known_free_models.json")
 MODEL_CHANGES_FILE = Path("model_changes.json")
+MODEL_LAYER_FILE = Path("model_layer.json")
 DAILY_SNAPSHOT_DIR = Path("daily_snapshots")
 REQUEST_TIMEOUT = 30
+MAX_PROFILE_CANDIDATES = 8
+LONG_CONTEXT_THRESHOLD = 65536
 
 
 def now_utc() -> datetime:
@@ -107,6 +110,205 @@ def extract_model_info(model: Dict[str, Any]) -> Dict[str, Any]:
         "per_request_limits": model.get("per_request_limits"),
         "architecture": model.get("architecture", {}),
     }
+
+
+def safe_int(value: Any) -> Optional[int]:
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, int):
+        return value
+    if isinstance(value, float):
+        return int(value)
+    if isinstance(value, str):
+        text = value.strip()
+        if not text:
+            return None
+        try:
+            return int(text)
+        except ValueError:
+            return None
+    return None
+
+
+def ensure_str_list(values: Any) -> List[str]:
+    if not isinstance(values, list):
+        return []
+    output: List[str] = []
+    for value in values:
+        if isinstance(value, str):
+            output.append(value.lower())
+    return sorted(set(output))
+
+
+def compute_model_tags(model_id: str, info: Dict[str, Any]) -> List[str]:
+    text = " ".join(
+        str(part).lower()
+        for part in [model_id, info.get("name"), info.get("description")]
+        if isinstance(part, str)
+    )
+
+    architecture = info.get("architecture", {})
+    if not isinstance(architecture, dict):
+        architecture = {}
+    input_modalities = ensure_str_list(architecture.get("input_modalities"))
+
+    top_provider = info.get("top_provider", {})
+    if not isinstance(top_provider, dict):
+        top_provider = {}
+
+    context_length = safe_int(info.get("context_length")) or 0
+    tags: Set[str] = {"text"}
+
+    reasoning_keywords = (
+        "reasoning",
+        "deepseek-r1",
+        "r1",
+        "qwq",
+        "think",
+        "o1",
+        "reasoner",
+    )
+    if any(keyword in text for keyword in reasoning_keywords):
+        tags.add("reasoning")
+
+    if context_length >= LONG_CONTEXT_THRESHOLD:
+        tags.add("long_context")
+
+    if "image" in input_modalities:
+        tags.add("vision")
+
+    if top_provider.get("is_moderated") is True:
+        tags.add("moderated")
+
+    return sorted(tags)
+
+
+def build_model_index(current_models: Dict[str, Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+    model_index: Dict[str, Dict[str, Any]] = {}
+
+    for model_id in sorted(current_models.keys()):
+        info = current_models[model_id]
+        architecture = info.get("architecture", {})
+        if not isinstance(architecture, dict):
+            architecture = {}
+
+        top_provider = info.get("top_provider", {})
+        if not isinstance(top_provider, dict):
+            top_provider = {}
+
+        context_length = safe_int(info.get("context_length"))
+        model_index[model_id] = {
+            "id": model_id,
+            "name": info.get("name") or model_id,
+            "context_length": context_length,
+            "input_modalities": ensure_str_list(architecture.get("input_modalities")),
+            "output_modalities": ensure_str_list(architecture.get("output_modalities")),
+            "is_moderated": top_provider.get("is_moderated") is True,
+            "tags": compute_model_tags(model_id, info),
+        }
+
+    return model_index
+
+
+def context_for_sort(entry: Dict[str, Any]) -> int:
+    value = entry.get("context_length")
+    return value if isinstance(value, int) else 0
+
+
+def build_profiles(model_index: Dict[str, Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+    all_ids = sorted(model_index.keys())
+
+    default_candidates = sorted(
+        all_ids,
+        key=lambda model_id: (
+            1 if "reasoning" in model_index[model_id]["tags"] else 0,
+            0 if model_index[model_id]["is_moderated"] else 1,
+            -context_for_sort(model_index[model_id]),
+            model_id,
+        ),
+    )[:MAX_PROFILE_CANDIDATES]
+
+    reasoning_pool = [model_id for model_id in all_ids if "reasoning" in model_index[model_id]["tags"]]
+    reasoning_candidates = sorted(
+        reasoning_pool,
+        key=lambda model_id: (
+            0 if model_index[model_id]["is_moderated"] else 1,
+            -context_for_sort(model_index[model_id]),
+            model_id,
+        ),
+    )[:MAX_PROFILE_CANDIDATES]
+    if not reasoning_candidates:
+        reasoning_candidates = list(default_candidates)
+
+    long_context_pool = [model_id for model_id in all_ids if "long_context" in model_index[model_id]["tags"]]
+    long_context_candidates = sorted(
+        long_context_pool or all_ids,
+        key=lambda model_id: (
+            -context_for_sort(model_index[model_id]),
+            0 if model_index[model_id]["is_moderated"] else 1,
+            model_id,
+        ),
+    )[:MAX_PROFILE_CANDIDATES]
+
+    return {
+        "chat.default.free": {
+            "description": "General-purpose free chat profile.",
+            "selection": "ordered-fallback",
+            "candidate_model_ids": default_candidates,
+        },
+        "chat.reasoning.free": {
+            "description": "Reasoning-focused free chat profile.",
+            "selection": "ordered-fallback",
+            "candidate_model_ids": reasoning_candidates,
+        },
+        "chat.longctx.free": {
+            "description": "Long-context free chat profile.",
+            "selection": "ordered-fallback",
+            "candidate_model_ids": long_context_candidates,
+        },
+    }
+
+
+def build_model_layer(current_models: Dict[str, Dict[str, Any]]) -> Dict[str, Any]:
+    model_index = build_model_index(current_models)
+    profiles = build_profiles(model_index)
+    return {
+        "schema_version": "1.0",
+        "updated_at": None,
+        "source": {
+            "provider": "openrouter",
+            "endpoint": OPENROUTER_API_URL,
+        },
+        "stats": {
+            "free_model_count": len(model_index),
+            "profile_count": len(profiles),
+        },
+        "profiles": profiles,
+        "models": model_index,
+    }
+
+
+def comparable_model_layer(layer: Dict[str, Any]) -> Dict[str, Any]:
+    comparable = dict(layer)
+    comparable.pop("updated_at", None)
+    return comparable
+
+
+def save_model_layer(layer: Dict[str, Any]) -> bool:
+    existing: Optional[Dict[str, Any]] = None
+    if MODEL_LAYER_FILE.exists():
+        with MODEL_LAYER_FILE.open("r", encoding="utf-8") as file:
+            existing = json.load(file)
+
+    if existing and comparable_model_layer(existing) == comparable_model_layer(layer):
+        return False
+
+    output = dict(layer)
+    output["updated_at"] = iso_utc(now_utc())
+    with MODEL_LAYER_FILE.open("w", encoding="utf-8") as file:
+        json.dump(output, file, ensure_ascii=False, indent=2, sort_keys=True)
+
+    return True
 
 
 def load_known_models() -> Dict[str, Any]:
@@ -298,6 +500,7 @@ def main() -> int:
     write_model_changes_file(diff, current_models)
     save_known_models(current_models)
     snapshot_path, snapshot_updated = save_daily_snapshot(diff, current_models)
+    model_layer_updated = save_model_layer(build_model_layer(current_models))
 
     set_github_output("has_changes", str(has_changes).lower())
     set_github_output("new_count", str(new_count))
@@ -305,6 +508,8 @@ def main() -> int:
     set_github_output("total_count", str(len(current_models)))
     set_github_output("snapshot_path", str(snapshot_path))
     set_github_output("snapshot_updated", str(snapshot_updated).lower())
+    set_github_output("model_layer_path", str(MODEL_LAYER_FILE))
+    set_github_output("model_layer_updated", str(model_layer_updated).lower())
 
     if has_changes:
         issue_title = f"OpenRouter free model updates ({now_utc().strftime('%Y-%m-%d')})"
@@ -313,6 +518,7 @@ def main() -> int:
         set_github_output("issue_body", issue_body)
 
     print(f"Daily snapshot: {snapshot_path} (updated={snapshot_updated})")
+    print(f"Model layer: {MODEL_LAYER_FILE} (updated={model_layer_updated})")
     return 0
 
 
