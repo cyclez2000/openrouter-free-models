@@ -901,16 +901,7 @@
       }
     }
   },
-  "new_model_ids": [
-    "qwen/qwen3-235b-a22b-thinking-2507",
-    "qwen/qwen3-vl-235b-a22b-thinking",
-    "qwen/qwen3-vl-30b-a3b-thinking"
-  ],
-  "removed_model_ids": [
-    "openrouter/pony-alpha",
-    "tngtech/deepseek-r1t-chimera:free",
-    "tngtech/deepseek-r1t2-chimera:free",
-    "tngtech/tng-r1t-chimera:free"
-  ],
+  "new_model_ids": [],
+  "removed_model_ids": [],
   "total_free_models": 31
 }
