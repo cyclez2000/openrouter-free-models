@@ -46,8 +46,8 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const title = `${{ steps.check.outputs.issue_title }}`;
-            const body = `${{ steps.check.outputs.issue_body }}`;
+            const title = ${{ toJSON(steps.check.outputs.issue_title) }};
+            const body = ${{ toJSON(steps.check.outputs.issue_body) }};
 
             const issue = await github.rest.issues.create({
               owner: context.repo.owner,
