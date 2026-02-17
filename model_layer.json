@@ -377,14 +377,14 @@
         "vision"
       ]
     },
-    "openrouter/pony-alpha": {
-      "context_length": 200000,
-      "id": "openrouter/pony-alpha",
+    "qwen/qwen3-235b-a22b-thinking-2507": {
+      "context_length": 131072,
+      "id": "qwen/qwen3-235b-a22b-thinking-2507",
       "input_modalities": [
         "text"
       ],
       "is_moderated": false,
-      "name": "Pony Alpha",
+      "name": "Qwen: Qwen3 235B A22B Thinking 2507",
       "output_modalities": [
         "text"
       ],
@@ -444,6 +444,44 @@
         "text"
       ]
     },
+    "qwen/qwen3-vl-235b-a22b-thinking": {
+      "context_length": 131072,
+      "id": "qwen/qwen3-vl-235b-a22b-thinking",
+      "input_modalities": [
+        "image",
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Qwen: Qwen3 VL 235B A22B Thinking",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text",
+        "vision"
+      ]
+    },
+    "qwen/qwen3-vl-30b-a3b-thinking": {
+      "context_length": 131072,
+      "id": "qwen/qwen3-vl-30b-a3b-thinking",
+      "input_modalities": [
+        "image",
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Qwen: Qwen3 VL 30B A3B Thinking",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text",
+        "vision"
+      ]
+    },
     "stepfun/step-3.5-flash:free": {
       "context_length": 256000,
       "id": "stepfun/step-3.5-flash:free",
@@ -452,57 +490,6 @@
       ],
       "is_moderated": false,
       "name": "StepFun: Step 3.5 Flash (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text"
-      ]
-    },
-    "tngtech/deepseek-r1t-chimera:free": {
-      "context_length": 163840,
-      "id": "tngtech/deepseek-r1t-chimera:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "TNG: DeepSeek R1T Chimera (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text"
-      ]
-    },
-    "tngtech/deepseek-r1t2-chimera:free": {
-      "context_length": 163840,
-      "id": "tngtech/deepseek-r1t2-chimera:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "TNG: DeepSeek R1T2 Chimera (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text"
-      ]
-    },
-    "tngtech/tng-r1t-chimera:free": {
-      "context_length": 163840,
-      "id": "tngtech/tng-r1t-chimera:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "TNG: R1T Chimera (free)",
       "output_modalities": [
         "text"
       ],
@@ -535,7 +522,7 @@
         "text"
       ],
       "is_moderated": false,
-      "name": "Z.AI: GLM 4.5 Air (free)",
+      "name": "Z.ai: GLM 4.5 Air (free)",
       "output_modalities": [
         "text"
       ],
@@ -568,9 +555,9 @@
         "nvidia/nemotron-3-nano-30b-a3b:free",
         "stepfun/step-3.5-flash:free",
         "openrouter/free",
-        "openrouter/pony-alpha",
         "deepseek/deepseek-r1-0528:free",
-        "tngtech/deepseek-r1t-chimera:free"
+        "openai/gpt-oss-120b:free",
+        "openai/gpt-oss-20b:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
@@ -582,9 +569,9 @@
         "qwen/qwen3-next-80b-a3b-instruct:free",
         "qwen/qwen3-coder:free",
         "stepfun/step-3.5-flash:free",
-        "openrouter/pony-alpha",
         "deepseek/deepseek-r1-0528:free",
-        "tngtech/deepseek-r1t-chimera:free"
+        "arcee-ai/trinity-mini:free",
+        "google/gemma-3-27b-it:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -596,8 +583,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 32,
+    "free_model_count": 31,
     "profile_count": 3
   },
-  "updated_at": "2026-02-11T02:50:56.378791Z"
+  "updated_at": "2026-02-17T05:57:13.009863Z"
 }
