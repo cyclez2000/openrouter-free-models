@@ -342,23 +342,6 @@
         "text"
       ]
     },
-    "openrouter/aurora-alpha": {
-      "context_length": 128000,
-      "id": "openrouter/aurora-alpha",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Aurora Alpha",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text"
-      ]
-    },
     "openrouter/free": {
       "context_length": 200000,
       "id": "openrouter/free",
@@ -583,8 +566,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 31,
+    "free_model_count": 30,
     "profile_count": 3
   },
-  "updated_at": "2026-02-17T05:57:13.009863Z"
+  "updated_at": "2026-02-20T05:07:33.690974Z"
 }
