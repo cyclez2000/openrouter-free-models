@@ -465,22 +465,6 @@
         "text"
       ]
     },
-    "upstage/solar-pro-3:free": {
-      "context_length": 128000,
-      "id": "upstage/solar-pro-3:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Upstage: Solar Pro 3 (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "text"
-      ]
-    },
     "z-ai/glm-4.5-air:free": {
       "context_length": 131072,
       "id": "z-ai/glm-4.5-air:free",
@@ -505,11 +489,11 @@
         "meta-llama/llama-3.3-70b-instruct:free",
         "nvidia/nemotron-3-nano-30b-a3b:free",
         "openrouter/free",
-        "upstage/solar-pro-3:free",
         "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
         "liquid/lfm-2.5-1.2b-instruct:free",
         "google/gemma-3n-e4b-it:free",
-        "openai/gpt-oss-120b:free"
+        "openai/gpt-oss-120b:free",
+        "openai/gpt-oss-20b:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -549,8 +533,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 29,
+    "free_model_count": 28,
     "profile_count": 3
   },
-  "updated_at": "2026-02-25T05:16:30.709025Z"
+  "updated_at": "2026-03-03T01:23:06.100776Z"
 }
