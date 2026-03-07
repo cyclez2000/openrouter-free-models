@@ -343,23 +343,6 @@
         "vision"
       ]
     },
-    "qwen/qwen3-235b-a22b-thinking-2507": {
-      "context_length": 131072,
-      "id": "qwen/qwen3-235b-a22b-thinking-2507",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Qwen: Qwen3 235B A22B Thinking 2507",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text"
-      ]
-    },
     "qwen/qwen3-4b:free": {
       "context_length": 40960,
       "id": "qwen/qwen3-4b:free",
@@ -533,8 +516,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 28,
+    "free_model_count": 27,
     "profile_count": 3
   },
-  "updated_at": "2026-03-03T01:23:06.100776Z"
+  "updated_at": "2026-03-07T01:15:29.761958Z"
 }
