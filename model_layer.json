@@ -252,6 +252,23 @@
         "text"
       ]
     },
+    "nvidia/nemotron-3-super-120b-a12b:free": {
+      "context_length": 262144,
+      "id": "nvidia/nemotron-3-super-120b-a12b:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "NVIDIA: Nemotron 3 Super (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
     "nvidia/nemotron-nano-12b-v2-vl:free": {
       "context_length": 128000,
       "id": "nvidia/nemotron-nano-12b-v2-vl:free",
@@ -343,6 +360,44 @@
         "vision"
       ]
     },
+    "openrouter/healer-alpha": {
+      "context_length": 262144,
+      "id": "openrouter/healer-alpha",
+      "input_modalities": [
+        "audio",
+        "image",
+        "text",
+        "video"
+      ],
+      "is_moderated": false,
+      "name": "Healer Alpha",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text",
+        "vision"
+      ]
+    },
+    "openrouter/hunter-alpha": {
+      "context_length": 1048576,
+      "id": "openrouter/hunter-alpha",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Hunter Alpha",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
     "qwen/qwen3-4b:free": {
       "context_length": 40960,
       "id": "qwen/qwen3-4b:free",
@@ -391,44 +446,6 @@
         "long_context",
         "reasoning",
         "text"
-      ]
-    },
-    "qwen/qwen3-vl-235b-a22b-thinking": {
-      "context_length": 131072,
-      "id": "qwen/qwen3-vl-235b-a22b-thinking",
-      "input_modalities": [
-        "image",
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Qwen: Qwen3 VL 235B A22B Thinking",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text",
-        "vision"
-      ]
-    },
-    "qwen/qwen3-vl-30b-a3b-thinking": {
-      "context_length": 131072,
-      "id": "qwen/qwen3-vl-30b-a3b-thinking",
-      "input_modalities": [
-        "image",
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Qwen: Qwen3 VL 30B A3B Thinking",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text",
-        "vision"
       ]
     },
     "stepfun/step-3.5-flash:free": {
@@ -483,14 +500,14 @@
     },
     "chat.longctx.free": {
       "candidate_model_ids": [
+        "openrouter/hunter-alpha",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "openrouter/healer-alpha",
         "qwen/qwen3-next-80b-a3b-instruct:free",
         "qwen/qwen3-coder:free",
         "nvidia/nemotron-3-nano-30b-a3b:free",
         "stepfun/step-3.5-flash:free",
-        "openrouter/free",
-        "openai/gpt-oss-120b:free",
-        "openai/gpt-oss-20b:free",
-        "arcee-ai/trinity-mini:free"
+        "openrouter/free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
@@ -499,12 +516,12 @@
       "candidate_model_ids": [
         "openai/gpt-oss-120b:free",
         "openai/gpt-oss-20b:free",
+        "openrouter/hunter-alpha",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "openrouter/healer-alpha",
         "qwen/qwen3-next-80b-a3b-instruct:free",
         "qwen/qwen3-coder:free",
-        "stepfun/step-3.5-flash:free",
-        "arcee-ai/trinity-mini:free",
-        "google/gemma-3-27b-it:free",
-        "meta-llama/llama-3.2-3b-instruct:free"
+        "stepfun/step-3.5-flash:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -516,8 +533,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 27,
+    "free_model_count": 28,
     "profile_count": 3
   },
-  "updated_at": "2026-03-07T01:15:29.761958Z"
+  "updated_at": "2026-03-12T01:15:46.386302Z"
 }
