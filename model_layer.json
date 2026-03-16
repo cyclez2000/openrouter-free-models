@@ -200,6 +200,23 @@
         "text"
       ]
     },
+    "minimax/minimax-m2.5:free": {
+      "context_length": 196608,
+      "id": "minimax/minimax-m2.5:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": true,
+      "name": "MiniMax: MiniMax M2.5 (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "moderated",
+        "text"
+      ]
+    },
     "mistralai/mistral-small-3.1-24b-instruct:free": {
       "context_length": 128000,
       "id": "mistralai/mistral-small-3.1-24b-instruct:free",
@@ -385,6 +402,7 @@
       "context_length": 1048576,
       "id": "openrouter/hunter-alpha",
       "input_modalities": [
+        "image",
         "text"
       ],
       "is_moderated": false,
@@ -395,7 +413,8 @@
       "tags": [
         "long_context",
         "reasoning",
-        "text"
+        "text",
+        "vision"
       ]
     },
     "qwen/qwen3-4b:free": {
@@ -486,14 +505,14 @@
   "profiles": {
     "chat.default.free": {
       "candidate_model_ids": [
+        "minimax/minimax-m2.5:free",
         "meta-llama/llama-3.3-70b-instruct:free",
         "nvidia/nemotron-3-nano-30b-a3b:free",
         "openrouter/free",
         "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
         "liquid/lfm-2.5-1.2b-instruct:free",
         "google/gemma-3n-e4b-it:free",
-        "openai/gpt-oss-120b:free",
-        "openai/gpt-oss-20b:free"
+        "openai/gpt-oss-120b:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -533,8 +552,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 28,
+    "free_model_count": 29,
     "profile_count": 3
   },
-  "updated_at": "2026-03-12T01:15:46.386302Z"
+  "updated_at": "2026-03-16T01:29:59.228316Z"
 }
