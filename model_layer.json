@@ -184,19 +184,18 @@
       ]
     },
     "meta-llama/llama-3.3-70b-instruct:free": {
-      "context_length": 128000,
+      "context_length": 65536,
       "id": "meta-llama/llama-3.3-70b-instruct:free",
       "input_modalities": [
         "text"
       ],
-      "is_moderated": true,
+      "is_moderated": false,
       "name": "Meta: Llama 3.3 70B Instruct (free)",
       "output_modalities": [
         "text"
       ],
       "tags": [
         "long_context",
-        "moderated",
         "text"
       ]
     },
@@ -377,46 +376,6 @@
         "vision"
       ]
     },
-    "openrouter/healer-alpha": {
-      "context_length": 262144,
-      "id": "openrouter/healer-alpha",
-      "input_modalities": [
-        "audio",
-        "image",
-        "text",
-        "video"
-      ],
-      "is_moderated": false,
-      "name": "Healer Alpha",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text",
-        "vision"
-      ]
-    },
-    "openrouter/hunter-alpha": {
-      "context_length": 1048576,
-      "id": "openrouter/hunter-alpha",
-      "input_modalities": [
-        "image",
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Hunter Alpha",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text",
-        "vision"
-      ]
-    },
     "qwen/qwen3-4b:free": {
       "context_length": 40960,
       "id": "qwen/qwen3-4b:free",
@@ -506,9 +465,9 @@
     "chat.default.free": {
       "candidate_model_ids": [
         "minimax/minimax-m2.5:free",
-        "meta-llama/llama-3.3-70b-instruct:free",
         "nvidia/nemotron-3-nano-30b-a3b:free",
         "openrouter/free",
+        "meta-llama/llama-3.3-70b-instruct:free",
         "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
         "liquid/lfm-2.5-1.2b-instruct:free",
         "google/gemma-3n-e4b-it:free",
@@ -519,14 +478,14 @@
     },
     "chat.longctx.free": {
       "candidate_model_ids": [
-        "openrouter/hunter-alpha",
         "nvidia/nemotron-3-super-120b-a12b:free",
-        "openrouter/healer-alpha",
         "qwen/qwen3-next-80b-a3b-instruct:free",
         "qwen/qwen3-coder:free",
         "nvidia/nemotron-3-nano-30b-a3b:free",
         "stepfun/step-3.5-flash:free",
-        "openrouter/free"
+        "openrouter/free",
+        "minimax/minimax-m2.5:free",
+        "openai/gpt-oss-120b:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
@@ -535,12 +494,12 @@
       "candidate_model_ids": [
         "openai/gpt-oss-120b:free",
         "openai/gpt-oss-20b:free",
-        "openrouter/hunter-alpha",
         "nvidia/nemotron-3-super-120b-a12b:free",
-        "openrouter/healer-alpha",
         "qwen/qwen3-next-80b-a3b-instruct:free",
         "qwen/qwen3-coder:free",
-        "stepfun/step-3.5-flash:free"
+        "stepfun/step-3.5-flash:free",
+        "arcee-ai/trinity-mini:free",
+        "google/gemma-3-27b-it:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -552,8 +511,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 29,
+    "free_model_count": 27,
     "profile_count": 3
   },
-  "updated_at": "2026-03-16T01:29:59.228316Z"
+  "updated_at": "2026-03-19T01:25:55.276188Z"
 }
