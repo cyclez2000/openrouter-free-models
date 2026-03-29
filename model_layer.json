@@ -216,25 +216,6 @@
         "text"
       ]
     },
-    "mistralai/mistral-small-3.1-24b-instruct:free": {
-      "context_length": 128000,
-      "id": "mistralai/mistral-small-3.1-24b-instruct:free",
-      "input_modalities": [
-        "image",
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Mistral: Mistral Small 3.1 24B (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text",
-        "vision"
-      ]
-    },
     "nousresearch/hermes-3-llama-3.1-405b:free": {
       "context_length": 131072,
       "id": "nousresearch/hermes-3-llama-3.1-405b:free",
@@ -376,22 +357,6 @@
         "vision"
       ]
     },
-    "qwen/qwen3-4b:free": {
-      "context_length": 40960,
-      "id": "qwen/qwen3-4b:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Qwen: Qwen3 4B (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "reasoning",
-        "text"
-      ]
-    },
     "qwen/qwen3-coder:free": {
       "context_length": 262000,
       "id": "qwen/qwen3-coder:free",
@@ -511,8 +476,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 27,
+    "free_model_count": 25,
     "profile_count": 3
   },
-  "updated_at": "2026-03-19T01:25:55.276188Z"
+  "updated_at": "2026-03-29T01:45:30.801974Z"
 }
