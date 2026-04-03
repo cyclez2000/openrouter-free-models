@@ -429,21 +429,24 @@
         "text"
       ]
     },
-    "qwen/qwen3.6-plus-preview:free": {
+    "qwen/qwen3.6-plus:free": {
       "context_length": 1000000,
-      "id": "qwen/qwen3.6-plus-preview:free",
+      "id": "qwen/qwen3.6-plus:free",
       "input_modalities": [
-        "text"
+        "image",
+        "text",
+        "video"
       ],
       "is_moderated": false,
-      "name": "Qwen: Qwen3.6 Plus Preview (free)",
+      "name": "Qwen: Qwen3.6 Plus (free)",
       "output_modalities": [
         "text"
       ],
       "tags": [
         "long_context",
         "reasoning",
-        "text"
+        "text",
+        "vision"
       ]
     },
     "stepfun/step-3.5-flash:free": {
@@ -500,7 +503,7 @@
       "candidate_model_ids": [
         "google/lyria-3-clip-preview",
         "google/lyria-3-pro-preview",
-        "qwen/qwen3.6-plus-preview:free",
+        "qwen/qwen3.6-plus:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
         "qwen/qwen3-coder:free",
@@ -514,7 +517,7 @@
       "candidate_model_ids": [
         "openai/gpt-oss-120b:free",
         "openai/gpt-oss-20b:free",
-        "qwen/qwen3.6-plus-preview:free",
+        "qwen/qwen3.6-plus:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
         "qwen/qwen3-coder:free",
@@ -534,5 +537,5 @@
     "free_model_count": 28,
     "profile_count": 3
   },
-  "updated_at": "2026-03-31T01:44:38.093028Z"
+  "updated_at": "2026-04-03T01:28:59.785948Z"
 }
