@@ -487,27 +487,27 @@
   "profiles": {
     "chat.default.free": {
       "candidate_model_ids": [
-        "minimax/minimax-m2.5:free",
-        "google/lyria-3-clip-preview",
-        "google/lyria-3-pro-preview",
-        "nvidia/nemotron-3-nano-30b-a3b:free",
-        "openrouter/free",
         "meta-llama/llama-3.3-70b-instruct:free",
+        "nvidia/nemotron-3-nano-30b-a3b:free",
+        "google/lyria-3-pro-preview",
+        "google/lyria-3-clip-preview",
         "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
-        "liquid/lfm-2.5-1.2b-instruct:free"
+        "liquid/lfm-2.5-1.2b-instruct:free",
+        "openrouter/free",
+        "minimax/minimax-m2.5:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
     },
     "chat.longctx.free": {
       "candidate_model_ids": [
-        "google/lyria-3-clip-preview",
-        "google/lyria-3-pro-preview",
         "qwen/qwen3.6-plus:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
         "qwen/qwen3-coder:free",
         "nvidia/nemotron-3-nano-30b-a3b:free",
+        "google/lyria-3-pro-preview",
+        "google/lyria-3-clip-preview",
         "stepfun/step-3.5-flash:free"
       ],
       "description": "Long-context free chat profile.",
@@ -515,12 +515,12 @@
     },
     "chat.reasoning.free": {
       "candidate_model_ids": [
-        "openai/gpt-oss-120b:free",
-        "openai/gpt-oss-20b:free",
         "qwen/qwen3.6-plus:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
         "qwen/qwen3-coder:free",
+        "openai/gpt-oss-120b:free",
+        "openai/gpt-oss-20b:free",
         "stepfun/step-3.5-flash:free",
         "arcee-ai/trinity-mini:free"
       ],
@@ -537,5 +537,5 @@
     "free_model_count": 28,
     "profile_count": 3
   },
-  "updated_at": "2026-04-03T01:28:59.785948Z"
+  "updated_at": "2026-04-06T01:47:50.740502Z"
 }
