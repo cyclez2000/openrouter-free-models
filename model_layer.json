@@ -13,7 +13,6 @@
       ],
       "tags": [
         "long_context",
-        "reasoning",
         "text"
       ]
     },
@@ -116,7 +115,6 @@
         "text"
       ],
       "tags": [
-        "reasoning",
         "text"
       ]
     },
@@ -300,7 +298,6 @@
       ],
       "tags": [
         "long_context",
-        "reasoning",
         "text"
       ]
     },
@@ -373,7 +370,6 @@
       "tags": [
         "long_context",
         "moderated",
-        "reasoning",
         "text"
       ]
     },
@@ -444,7 +440,6 @@
       ],
       "tags": [
         "long_context",
-        "reasoning",
         "text",
         "vision"
       ]
@@ -462,7 +457,6 @@
       ],
       "tags": [
         "long_context",
-        "reasoning",
         "text"
       ]
     },
@@ -479,7 +473,6 @@
       ],
       "tags": [
         "long_context",
-        "reasoning",
         "text"
       ]
     }
@@ -487,13 +480,13 @@
   "profiles": {
     "chat.default.free": {
       "candidate_model_ids": [
-        "meta-llama/llama-3.3-70b-instruct:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "qwen/qwen3.6-plus:free",
         "nvidia/nemotron-3-nano-30b-a3b:free",
+        "openai/gpt-oss-20b:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
-        "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
-        "liquid/lfm-2.5-1.2b-instruct:free",
-        "openrouter/free",
+        "stepfun/step-3.5-flash:free",
         "minimax/minimax-m2.5:free"
       ],
       "description": "General-purpose free chat profile.",
@@ -501,10 +494,10 @@
     },
     "chat.longctx.free": {
       "candidate_model_ids": [
-        "qwen/qwen3.6-plus:free",
+        "qwen/qwen3-coder:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
-        "qwen/qwen3-coder:free",
+        "qwen/qwen3.6-plus:free",
         "nvidia/nemotron-3-nano-30b-a3b:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
@@ -515,13 +508,13 @@
     },
     "chat.reasoning.free": {
       "candidate_model_ids": [
-        "qwen/qwen3.6-plus:free",
-        "nvidia/nemotron-3-super-120b-a12b:free",
-        "qwen/qwen3-next-80b-a3b-instruct:free",
+        "nousresearch/hermes-3-llama-3.1-405b:free",
         "qwen/qwen3-coder:free",
+        "qwen/qwen3-next-80b-a3b-instruct:free",
+        "google/gemma-3-27b-it:free",
         "openai/gpt-oss-120b:free",
-        "openai/gpt-oss-20b:free",
-        "stepfun/step-3.5-flash:free",
+        "nvidia/nemotron-nano-12b-v2-vl:free",
+        "meta-llama/llama-3.2-3b-instruct:free",
         "arcee-ai/trinity-mini:free"
       ],
       "description": "Reasoning-focused free chat profile.",
@@ -537,5 +530,5 @@
     "free_model_count": 28,
     "profile_count": 3
   },
-  "updated_at": "2026-04-06T01:47:50.740502Z"
+  "updated_at": "2026-04-07T01:45:24.527144Z"
 }
