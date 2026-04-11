@@ -472,9 +472,9 @@
         "nvidia/nemotron-3-nano-30b-a3b:free",
         "openai/gpt-oss-20b:free",
         "minimax/minimax-m2.5:free",
+        "openrouter/free",
         "google/lyria-3-pro-preview",
-        "google/lyria-3-clip-preview",
-        "openrouter/free"
+        "google/lyria-3-clip-preview"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -517,5 +517,5 @@
     "free_model_count": 27,
     "profile_count": 3
   },
-  "updated_at": "2026-04-10T01:49:06.112216Z"
+  "updated_at": "2026-04-11T01:27:07.923175Z"
 }
