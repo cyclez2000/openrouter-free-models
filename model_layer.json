@@ -501,41 +501,41 @@
   "profiles": {
     "chat.default.free": {
       "candidate_model_ids": [
-        "nvidia/nemotron-3-super-120b-a12b:free",
-        "google/gemma-4-26b-a4b-it:free",
-        "nvidia/nemotron-3-nano-30b-a3b:free",
-        "openrouter/elephant-alpha",
-        "google/lyria-3-pro-preview",
-        "google/lyria-3-clip-preview",
         "minimax/minimax-m2.5:free",
-        "openai/gpt-oss-20b:free"
+        "openai/gpt-oss-20b:free",
+        "google/lyria-3-clip-preview",
+        "google/lyria-3-pro-preview",
+        "google/gemma-4-26b-a4b-it:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "openrouter/elephant-alpha",
+        "nvidia/nemotron-3-nano-30b-a3b:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
     },
     "chat.longctx.free": {
       "candidate_model_ids": [
-        "qwen/qwen3-coder:free",
-        "qwen/qwen3-next-80b-a3b-instruct:free",
-        "nvidia/nemotron-3-super-120b-a12b:free",
-        "google/gemma-4-31b-it:free",
-        "google/gemma-4-26b-a4b-it:free",
-        "openrouter/elephant-alpha",
+        "google/lyria-3-clip-preview",
         "google/lyria-3-pro-preview",
-        "google/lyria-3-clip-preview"
+        "google/gemma-4-26b-a4b-it:free",
+        "google/gemma-4-31b-it:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "openrouter/elephant-alpha",
+        "qwen/qwen3-next-80b-a3b-instruct:free",
+        "qwen/qwen3-coder:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
     },
     "chat.reasoning.free": {
       "candidate_model_ids": [
-        "nousresearch/hermes-3-llama-3.1-405b:free",
-        "qwen/qwen3-coder:free",
-        "qwen/qwen3-next-80b-a3b-instruct:free",
         "openai/gpt-oss-120b:free",
         "google/gemma-4-31b-it:free",
+        "qwen/qwen3-next-80b-a3b-instruct:free",
+        "qwen/qwen3-coder:free",
         "google/gemma-3-27b-it:free",
         "meta-llama/llama-3.2-3b-instruct:free",
+        "nousresearch/hermes-3-llama-3.1-405b:free",
         "nvidia/nemotron-nano-12b-v2-vl:free"
       ],
       "description": "Reasoning-focused free chat profile.",
@@ -551,5 +551,5 @@
     "free_model_count": 29,
     "profile_count": 3
   },
-  "updated_at": "2026-04-16T01:56:29.143503Z"
+  "updated_at": "2026-04-17T01:55:18.374659Z"
 }
