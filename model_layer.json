@@ -274,24 +274,6 @@
         "text"
       ]
     },
-    "moonshotai/kimi-k2.5": {
-      "context_length": 256000,
-      "id": "moonshotai/kimi-k2.5",
-      "input_modalities": [
-        "image",
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "MoonshotAI: Kimi K2.5",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "text",
-        "vision"
-      ]
-    },
     "nousresearch/hermes-3-llama-3.1-405b:free": {
       "context_length": 131072,
       "id": "nousresearch/hermes-3-llama-3.1-405b:free",
@@ -501,14 +483,14 @@
   "profiles": {
     "chat.default.free": {
       "candidate_model_ids": [
-        "google/gemma-4-26b-a4b-it:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
+        "google/gemma-4-26b-a4b-it:free",
+        "nvidia/nemotron-3-nano-30b-a3b:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
-        "moonshotai/kimi-k2.5",
         "openrouter/elephant-alpha",
-        "minimax/minimax-m2.5:free",
-        "openai/gpt-oss-20b:free"
+        "openai/gpt-oss-20b:free",
+        "minimax/minimax-m2.5:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -516,12 +498,12 @@
     "chat.longctx.free": {
       "candidate_model_ids": [
         "qwen/qwen3-coder:free",
-        "qwen/qwen3-next-80b-a3b-instruct:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
         "google/gemma-4-31b-it:free",
         "google/gemma-4-26b-a4b-it:free",
-        "nvidia/nemotron-3-super-120b-a12b:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
+        "qwen/qwen3-next-80b-a3b-instruct:free",
         "openrouter/elephant-alpha"
       ],
       "description": "Long-context free chat profile.",
@@ -531,12 +513,12 @@
       "candidate_model_ids": [
         "nousresearch/hermes-3-llama-3.1-405b:free",
         "qwen/qwen3-coder:free",
-        "qwen/qwen3-next-80b-a3b-instruct:free",
-        "google/gemma-4-31b-it:free",
         "openai/gpt-oss-120b:free",
-        "nvidia/nemotron-nano-12b-v2-vl:free",
+        "google/gemma-4-31b-it:free",
         "google/gemma-3-27b-it:free",
-        "meta-llama/llama-3.2-3b-instruct:free"
+        "qwen/qwen3-next-80b-a3b-instruct:free",
+        "meta-llama/llama-3.2-3b-instruct:free",
+        "nvidia/nemotron-nano-12b-v2-vl:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -548,8 +530,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 29,
+    "free_model_count": 28,
     "profile_count": 3
   },
-  "updated_at": "2026-04-18T01:30:25.846464Z"
+  "updated_at": "2026-04-19T01:55:38.018974Z"
 }
