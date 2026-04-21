@@ -512,9 +512,9 @@
     "chat.reasoning.free": {
       "candidate_model_ids": [
         "nousresearch/hermes-3-llama-3.1-405b:free",
-        "openai/gpt-oss-120b:free",
         "qwen/qwen3-coder:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
+        "openai/gpt-oss-120b:free",
         "google/gemma-4-31b-it:free",
         "google/gemma-3-27b-it:free",
         "nvidia/nemotron-nano-12b-v2-vl:free",
@@ -533,5 +533,5 @@
     "free_model_count": 28,
     "profile_count": 3
   },
-  "updated_at": "2026-04-20T01:56:58.974851Z"
+  "updated_at": "2026-04-21T01:52:20.059395Z"
 }
