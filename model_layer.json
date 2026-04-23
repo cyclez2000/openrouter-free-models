@@ -1,21 +1,5 @@
 {
   "models": {
-    "arcee-ai/trinity-large-preview:free": {
-      "context_length": 131000,
-      "id": "arcee-ai/trinity-large-preview:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Arcee AI: Trinity Large Preview (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "text"
-      ]
-    },
     "cognitivecomputations/dolphin-mistral-24b-venice-edition:free": {
       "context_length": 32768,
       "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
@@ -483,11 +467,11 @@
   "profiles": {
     "chat.default.free": {
       "candidate_model_ids": [
-        "nvidia/nemotron-3-super-120b-a12b:free",
         "google/gemma-4-26b-a4b-it:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "nvidia/nemotron-3-nano-30b-a3b:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
-        "nvidia/nemotron-3-nano-30b-a3b:free",
         "inclusionai/ling-2.6-flash:free",
         "openai/gpt-oss-20b:free",
         "minimax/minimax-m2.5:free"
@@ -499,9 +483,9 @@
       "candidate_model_ids": [
         "qwen/qwen3-coder:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
-        "nvidia/nemotron-3-super-120b-a12b:free",
         "google/gemma-4-31b-it:free",
         "google/gemma-4-26b-a4b-it:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
         "inclusionai/ling-2.6-flash:free"
@@ -514,8 +498,8 @@
         "nousresearch/hermes-3-llama-3.1-405b:free",
         "qwen/qwen3-coder:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
-        "openai/gpt-oss-120b:free",
         "google/gemma-4-31b-it:free",
+        "openai/gpt-oss-120b:free",
         "google/gemma-3-27b-it:free",
         "nvidia/nemotron-nano-12b-v2-vl:free",
         "meta-llama/llama-3.2-3b-instruct:free"
@@ -530,8 +514,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 28,
+    "free_model_count": 27,
     "profile_count": 3
   },
-  "updated_at": "2026-04-22T01:51:24.394211Z"
+  "updated_at": "2026-04-23T01:55:38.063736Z"
 }
