@@ -518,42 +518,42 @@
   "profiles": {
     "chat.default.free": {
       "candidate_model_ids": [
-        "minimax/minimax-m2.5:free",
-        "openai/gpt-oss-20b:free",
-        "google/lyria-3-clip-preview",
-        "google/lyria-3-pro-preview",
         "google/gemma-4-26b-a4b-it:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "openai/gpt-oss-20b:free",
         "inclusionai/ling-2.6-1t:free",
         "inclusionai/ling-2.6-flash:free",
-        "nvidia/nemotron-3-super-120b-a12b:free"
+        "google/lyria-3-pro-preview",
+        "google/lyria-3-clip-preview",
+        "minimax/minimax-m2.5:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
     },
     "chat.longctx.free": {
       "candidate_model_ids": [
-        "google/lyria-3-clip-preview",
-        "google/lyria-3-pro-preview",
-        "google/gemma-4-26b-a4b-it:free",
         "google/gemma-4-31b-it:free",
+        "google/gemma-4-26b-a4b-it:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "qwen/qwen3-next-80b-a3b-instruct:free",
         "inclusionai/ling-2.6-1t:free",
         "inclusionai/ling-2.6-flash:free",
-        "nvidia/nemotron-3-super-120b-a12b:free",
-        "qwen/qwen3-next-80b-a3b-instruct:free"
+        "google/lyria-3-pro-preview",
+        "google/lyria-3-clip-preview"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
     },
     "chat.reasoning.free": {
       "candidate_model_ids": [
-        "openai/gpt-oss-120b:free",
+        "nousresearch/hermes-3-llama-3.1-405b:free",
+        "qwen/qwen3-coder:free",
         "google/gemma-4-31b-it:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
         "tencent/hy3-preview:free",
-        "qwen/qwen3-coder:free",
+        "openai/gpt-oss-120b:free",
         "google/gemma-3-27b-it:free",
-        "meta-llama/llama-3.2-3b-instruct:free",
-        "nousresearch/hermes-3-llama-3.1-405b:free"
+        "meta-llama/llama-3.2-3b-instruct:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -568,5 +568,5 @@
     "free_model_count": 30,
     "profile_count": 3
   },
-  "updated_at": "2026-04-24T01:55:40.011265Z"
+  "updated_at": "2026-04-25T01:46:05.243586Z"
 }
