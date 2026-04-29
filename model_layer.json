@@ -211,22 +211,6 @@
         "text"
       ]
     },
-    "inclusionai/ling-2.6-flash:free": {
-      "context_length": 262144,
-      "id": "inclusionai/ling-2.6-flash:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "inclusionAI: Ling-2.6-flash (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "text"
-      ]
-    },
     "liquid/lfm-2.5-1.2b-instruct:free": {
       "context_length": 32768,
       "id": "liquid/lfm-2.5-1.2b-instruct:free",
@@ -341,6 +325,27 @@
         "text"
       ]
     },
+    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": {
+      "context_length": 256000,
+      "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "input_modalities": [
+        "audio",
+        "image",
+        "text",
+        "video"
+      ],
+      "is_moderated": false,
+      "name": "NVIDIA: Nemotron 3 Nano Omni (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text",
+        "vision"
+      ]
+    },
     "nvidia/nemotron-3-super-120b-a12b:free": {
       "context_length": 262144,
       "id": "nvidia/nemotron-3-super-120b-a12b:free",
@@ -447,6 +452,40 @@
         "vision"
       ]
     },
+    "poolside/laguna-m.1:free": {
+      "context_length": 131072,
+      "id": "poolside/laguna-m.1:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Poolside: Laguna M.1 (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
+    "poolside/laguna-xs.2:free": {
+      "context_length": 131072,
+      "id": "poolside/laguna-xs.2:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Poolside: Laguna XS.2 (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
     "qwen/qwen3-coder:free": {
       "context_length": 262000,
       "id": "qwen/qwen3-coder:free",
@@ -520,24 +559,24 @@
       "candidate_model_ids": [
         "nvidia/nemotron-3-super-120b-a12b:free",
         "google/gemma-4-26b-a4b-it:free",
+        "nvidia/nemotron-3-nano-30b-a3b:free",
         "inclusionai/ling-2.6-1t:free",
-        "inclusionai/ling-2.6-flash:free",
+        "openai/gpt-oss-20b:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
-        "minimax/minimax-m2.5:free",
-        "openai/gpt-oss-20b:free"
+        "minimax/minimax-m2.5:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
     },
     "chat.longctx.free": {
       "candidate_model_ids": [
-        "qwen/qwen3-next-80b-a3b-instruct:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
         "google/gemma-4-31b-it:free",
         "google/gemma-4-26b-a4b-it:free",
+        "tencent/hy3-preview:free",
+        "qwen/qwen3-next-80b-a3b-instruct:free",
         "inclusionai/ling-2.6-1t:free",
-        "inclusionai/ling-2.6-flash:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview"
       ],
@@ -546,13 +585,13 @@
     },
     "chat.reasoning.free": {
       "candidate_model_ids": [
-        "nousresearch/hermes-3-llama-3.1-405b:free",
         "qwen/qwen3-coder:free",
-        "qwen/qwen3-next-80b-a3b-instruct:free",
         "openai/gpt-oss-120b:free",
         "google/gemma-4-31b-it:free",
         "google/gemma-3-27b-it:free",
         "tencent/hy3-preview:free",
+        "qwen/qwen3-next-80b-a3b-instruct:free",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
         "meta-llama/llama-3.2-3b-instruct:free"
       ],
       "description": "Reasoning-focused free chat profile.",
@@ -565,8 +604,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 30,
+    "free_model_count": 32,
     "profile_count": 3
   },
-  "updated_at": "2026-04-28T02:07:59.359805Z"
+  "updated_at": "2026-04-29T02:09:28.710618Z"
 }
