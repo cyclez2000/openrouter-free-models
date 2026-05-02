@@ -573,14 +573,14 @@
   "profiles": {
     "chat.default.free": {
       "candidate_model_ids": [
-        "nvidia/nemotron-3-super-120b-a12b:free",
         "google/gemma-4-26b-a4b-it:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
         "inclusionai/ling-2.6-1t:free",
         "openrouter/owl-alpha",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
-        "minimax/minimax-m2.5:free",
-        "openai/gpt-oss-20b:free"
+        "openai/gpt-oss-20b:free",
+        "minimax/minimax-m2.5:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -588,8 +588,8 @@
     "chat.longctx.free": {
       "candidate_model_ids": [
         "google/gemma-4-31b-it:free",
-        "nvidia/nemotron-3-super-120b-a12b:free",
         "google/gemma-4-26b-a4b-it:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
         "inclusionai/ling-2.6-1t:free",
         "openrouter/owl-alpha",
@@ -601,9 +601,9 @@
     },
     "chat.reasoning.free": {
       "candidate_model_ids": [
+        "openai/gpt-oss-120b:free",
         "qwen/qwen3-coder:free",
         "google/gemma-4-31b-it:free",
-        "openai/gpt-oss-120b:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
         "google/gemma-3-27b-it:free",
@@ -623,5 +623,5 @@
     "free_model_count": 33,
     "profile_count": 3
   },
-  "updated_at": "2026-05-01T02:13:14.586925Z"
+  "updated_at": "2026-05-02T02:00:46.149400Z"
 }
