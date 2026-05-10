@@ -488,8 +488,8 @@
   "profiles": {
     "chat.default.free": {
       "candidate_model_ids": [
-        "google/gemma-4-26b-a4b-it:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
+        "google/gemma-4-26b-a4b-it:free",
         "nvidia/nemotron-3-nano-30b-a3b:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
@@ -503,9 +503,9 @@
     "chat.longctx.free": {
       "candidate_model_ids": [
         "google/gemma-4-31b-it:free",
-        "google/gemma-4-26b-a4b-it:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
         "inclusionai/ring-2.6-1t:free",
+        "google/gemma-4-26b-a4b-it:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
@@ -538,5 +538,5 @@
     "free_model_count": 28,
     "profile_count": 3
   },
-  "updated_at": "2026-05-09T02:07:52.397252Z"
+  "updated_at": "2026-05-10T02:08:35.100446Z"
 }
