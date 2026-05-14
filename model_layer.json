@@ -66,6 +66,22 @@
         "text"
       ]
     },
+    "deepseek/deepseek-v4-flash:free": {
+      "context_length": 256000,
+      "id": "deepseek/deepseek-v4-flash:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "DeepSeek: DeepSeek V4 Flash (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "text"
+      ]
+    },
     "google/gemma-4-26b-a4b-it:free": {
       "context_length": 262144,
       "id": "google/gemma-4-26b-a4b-it:free",
@@ -507,12 +523,12 @@
       "candidate_model_ids": [
         "nvidia/nemotron-3-super-120b-a12b:free",
         "google/gemma-4-26b-a4b-it:free",
-        "nvidia/nemotron-3-nano-30b-a3b:free",
+        "deepseek/deepseek-v4-flash:free",
+        "minimax/minimax-m2.5:free",
+        "openai/gpt-oss-20b:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
-        "openrouter/owl-alpha",
-        "minimax/minimax-m2.5:free",
-        "openai/gpt-oss-20b:free"
+        "openrouter/owl-alpha"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -552,8 +568,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 29,
+    "free_model_count": 30,
     "profile_count": 3
   },
-  "updated_at": "2026-05-13T02:28:04.463047Z"
+  "updated_at": "2026-05-14T02:29:34.771299Z"
 }
