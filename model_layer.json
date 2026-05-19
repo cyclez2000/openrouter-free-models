@@ -487,8 +487,8 @@
     "chat.default.free": {
       "candidate_model_ids": [
         "nvidia/nemotron-3-super-120b-a12b:free",
-        "deepseek/deepseek-v4-flash:free",
         "google/gemma-4-26b-a4b-it:free",
+        "deepseek/deepseek-v4-flash:free",
         "openrouter/owl-alpha",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
@@ -502,8 +502,8 @@
       "candidate_model_ids": [
         "qwen/qwen3-coder:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
-        "deepseek/deepseek-v4-flash:free",
         "google/gemma-4-26b-a4b-it:free",
+        "deepseek/deepseek-v4-flash:free",
         "arcee-ai/trinity-large-thinking:free",
         "openrouter/owl-alpha",
         "google/lyria-3-pro-preview",
@@ -515,9 +515,9 @@
     "chat.reasoning.free": {
       "candidate_model_ids": [
         "nousresearch/hermes-3-llama-3.1-405b:free",
-        "openai/gpt-oss-120b:free",
         "qwen/qwen3-coder:free",
         "google/gemma-4-31b-it:free",
+        "openai/gpt-oss-120b:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
         "arcee-ai/trinity-large-thinking:free",
@@ -536,5 +536,5 @@
     "free_model_count": 28,
     "profile_count": 3
   },
-  "updated_at": "2026-05-18T02:35:37.629240Z"
+  "updated_at": "2026-05-19T02:34:26.126355Z"
 }
