@@ -481,6 +481,22 @@
         "long_context",
         "text"
       ]
+    },
+    "z-ai/glm-5.1": {
+      "context_length": 202800,
+      "id": "z-ai/glm-5.1",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Z.ai: GLM 5.1",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "text"
+      ]
     }
   },
   "profiles": {
@@ -488,12 +504,12 @@
       "candidate_model_ids": [
         "nvidia/nemotron-3-super-120b-a12b:free",
         "google/gemma-4-26b-a4b-it:free",
+        "openai/gpt-oss-20b:free",
         "deepseek/deepseek-v4-flash:free",
         "openrouter/owl-alpha",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
-        "minimax/minimax-m2.5:free",
-        "openai/gpt-oss-20b:free"
+        "minimax/minimax-m2.5:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -503,8 +519,8 @@
         "qwen/qwen3-coder:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
         "google/gemma-4-26b-a4b-it:free",
-        "deepseek/deepseek-v4-flash:free",
         "arcee-ai/trinity-large-thinking:free",
+        "deepseek/deepseek-v4-flash:free",
         "openrouter/owl-alpha",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview"
@@ -516,12 +532,12 @@
       "candidate_model_ids": [
         "nousresearch/hermes-3-llama-3.1-405b:free",
         "qwen/qwen3-coder:free",
-        "google/gemma-4-31b-it:free",
         "openai/gpt-oss-120b:free",
+        "google/gemma-4-31b-it:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
-        "arcee-ai/trinity-large-thinking:free",
-        "meta-llama/llama-3.2-3b-instruct:free"
+        "meta-llama/llama-3.2-3b-instruct:free",
+        "arcee-ai/trinity-large-thinking:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -533,8 +549,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 28,
+    "free_model_count": 29,
     "profile_count": 3
   },
-  "updated_at": "2026-05-19T02:34:26.126355Z"
+  "updated_at": "2026-05-20T02:34:25.480353Z"
 }
