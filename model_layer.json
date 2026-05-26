@@ -486,42 +486,42 @@
   "profiles": {
     "chat.default.free": {
       "candidate_model_ids": [
-        "nvidia/nemotron-3-super-120b-a12b:free",
-        "deepseek/deepseek-v4-flash:free",
-        "google/gemma-4-26b-a4b-it:free",
+        "minimax/minimax-m2.5:free",
         "openai/gpt-oss-20b:free",
         "openrouter/owl-alpha",
-        "google/lyria-3-pro-preview",
+        "deepseek/deepseek-v4-flash:free",
         "google/lyria-3-clip-preview",
-        "minimax/minimax-m2.5:free"
+        "google/lyria-3-pro-preview",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "google/gemma-4-26b-a4b-it:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
     },
     "chat.longctx.free": {
       "candidate_model_ids": [
+        "openrouter/owl-alpha",
+        "deepseek/deepseek-v4-flash:free",
+        "google/lyria-3-clip-preview",
+        "google/lyria-3-pro-preview",
         "qwen/qwen3-coder:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
-        "deepseek/deepseek-v4-flash:free",
-        "google/gemma-4-26b-a4b-it:free",
         "arcee-ai/trinity-large-thinking:free",
-        "openrouter/owl-alpha",
-        "google/lyria-3-pro-preview",
-        "google/lyria-3-clip-preview"
+        "google/gemma-4-26b-a4b-it:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
     },
     "chat.reasoning.free": {
       "candidate_model_ids": [
-        "nousresearch/hermes-3-llama-3.1-405b:free",
-        "qwen/qwen3-coder:free",
-        "google/gemma-4-31b-it:free",
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-        "qwen/qwen3-next-80b-a3b-instruct:free",
         "openai/gpt-oss-120b:free",
+        "qwen/qwen3-coder:free",
         "arcee-ai/trinity-large-thinking:free",
-        "meta-llama/llama-3.2-3b-instruct:free"
+        "google/gemma-4-31b-it:free",
+        "qwen/qwen3-next-80b-a3b-instruct:free",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+        "meta-llama/llama-3.2-3b-instruct:free",
+        "nousresearch/hermes-3-llama-3.1-405b:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -536,5 +536,5 @@
     "free_model_count": 28,
     "profile_count": 3
   },
-  "updated_at": "2026-05-25T02:40:37.778946Z"
+  "updated_at": "2026-05-26T02:35:02.531895Z"
 }
