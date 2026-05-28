@@ -1,21 +1,5 @@
 {
   "models": {
-    "baidu/cobuddy:free": {
-      "context_length": 131072,
-      "id": "baidu/cobuddy:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Baidu Qianfan: CoBuddy (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "text"
-      ]
-    },
     "cognitivecomputations/dolphin-mistral-24b-venice-edition:free": {
       "context_length": 32768,
       "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
@@ -189,7 +173,7 @@
       ]
     },
     "minimax/minimax-m2.5:free": {
-      "context_length": 204800,
+      "context_length": 262144,
       "id": "minimax/minimax-m2.5:free",
       "input_modalities": [
         "text"
@@ -203,6 +187,24 @@
         "long_context",
         "moderated",
         "text"
+      ]
+    },
+    "moonshotai/kimi-k2.6:free": {
+      "context_length": 262144,
+      "id": "moonshotai/kimi-k2.6:free",
+      "input_modalities": [
+        "image",
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "MoonshotAI: Kimi K2.6 (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "text",
+        "vision"
       ]
     },
     "nousresearch/hermes-3-llama-3.1-405b:free": {
@@ -399,7 +401,7 @@
       ]
     },
     "poolside/laguna-xs.2:free": {
-      "context_length": 131072,
+      "context_length": 262144,
       "id": "poolside/laguna-xs.2:free",
       "input_modalities": [
         "text"
@@ -470,13 +472,13 @@
     "chat.default.free": {
       "candidate_model_ids": [
         "nvidia/nemotron-3-super-120b-a12b:free",
-        "google/gemma-4-26b-a4b-it:free",
         "deepseek/deepseek-v4-flash:free",
+        "google/gemma-4-26b-a4b-it:free",
+        "openrouter/owl-alpha",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
-        "openrouter/owl-alpha",
-        "minimax/minimax-m2.5:free",
-        "openai/gpt-oss-20b:free"
+        "openai/gpt-oss-20b:free",
+        "minimax/minimax-m2.5:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -485,26 +487,26 @@
       "candidate_model_ids": [
         "qwen/qwen3-coder:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
-        "google/gemma-4-31b-it:free",
-        "google/gemma-4-26b-a4b-it:free",
         "deepseek/deepseek-v4-flash:free",
+        "google/gemma-4-26b-a4b-it:free",
+        "openrouter/owl-alpha",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
-        "openrouter/owl-alpha"
+        "minimax/minimax-m2.5:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
     },
     "chat.reasoning.free": {
       "candidate_model_ids": [
-        "nousresearch/hermes-3-llama-3.1-405b:free",
         "qwen/qwen3-coder:free",
-        "openai/gpt-oss-120b:free",
         "google/gemma-4-31b-it:free",
-        "qwen/qwen3-next-80b-a3b-instruct:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+        "qwen/qwen3-next-80b-a3b-instruct:free",
+        "poolside/laguna-m.1:free",
+        "poolside/laguna-xs.2:free",
         "meta-llama/llama-3.2-3b-instruct:free",
-        "poolside/laguna-m.1:free"
+        "openai/gpt-oss-120b:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -519,5 +521,5 @@
     "free_model_count": 27,
     "profile_count": 3
   },
-  "updated_at": "2026-05-27T02:40:04.785764Z"
+  "updated_at": "2026-05-28T02:26:54.404202Z"
 }
