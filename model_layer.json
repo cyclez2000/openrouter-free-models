@@ -173,7 +173,7 @@
       ]
     },
     "minimax/minimax-m2.5:free": {
-      "context_length": 262144,
+      "context_length": 204800,
       "id": "minimax/minimax-m2.5:free",
       "input_modalities": [
         "text"
@@ -472,13 +472,13 @@
     "chat.default.free": {
       "candidate_model_ids": [
         "nvidia/nemotron-3-super-120b-a12b:free",
-        "deepseek/deepseek-v4-flash:free",
         "google/gemma-4-26b-a4b-it:free",
+        "deepseek/deepseek-v4-flash:free",
         "openrouter/owl-alpha",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
-        "openai/gpt-oss-20b:free",
-        "minimax/minimax-m2.5:free"
+        "minimax/minimax-m2.5:free",
+        "openai/gpt-oss-20b:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -486,13 +486,13 @@
     "chat.longctx.free": {
       "candidate_model_ids": [
         "qwen/qwen3-coder:free",
+        "google/gemma-4-31b-it:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
-        "deepseek/deepseek-v4-flash:free",
         "google/gemma-4-26b-a4b-it:free",
+        "deepseek/deepseek-v4-flash:free",
         "openrouter/owl-alpha",
         "google/lyria-3-pro-preview",
-        "google/lyria-3-clip-preview",
-        "minimax/minimax-m2.5:free"
+        "google/lyria-3-clip-preview"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
@@ -501,12 +501,12 @@
       "candidate_model_ids": [
         "qwen/qwen3-coder:free",
         "google/gemma-4-31b-it:free",
+        "openai/gpt-oss-120b:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
         "poolside/laguna-m.1:free",
         "poolside/laguna-xs.2:free",
-        "meta-llama/llama-3.2-3b-instruct:free",
-        "openai/gpt-oss-120b:free"
+        "meta-llama/llama-3.2-3b-instruct:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -521,5 +521,5 @@
     "free_model_count": 27,
     "profile_count": 3
   },
-  "updated_at": "2026-05-28T02:26:54.404202Z"
+  "updated_at": "2026-05-29T02:32:11.671265Z"
 }
