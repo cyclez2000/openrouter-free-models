@@ -470,22 +470,6 @@
         "reasoning",
         "text"
       ]
-    },
-    "z-ai/glm-4.5-air:free": {
-      "context_length": 131072,
-      "id": "z-ai/glm-4.5-air:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Z.ai: GLM 4.5 Air (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "text"
-      ]
     }
   },
   "profiles": {
@@ -493,12 +477,12 @@
       "candidate_model_ids": [
         "google/gemma-4-26b-a4b-it:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
-        "moonshotai/kimi-k2.6:free",
         "nex-agi/nex-n2-pro:free",
+        "moonshotai/kimi-k2.6:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
-        "openrouter/owl-alpha",
-        "openai/gpt-oss-20b:free"
+        "openai/gpt-oss-20b:free",
+        "openrouter/owl-alpha"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -523,10 +507,10 @@
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "google/gemma-4-31b-it:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-        "qwen/qwen3-next-80b-a3b-instruct:free",
         "poolside/laguna-m.1:free",
         "poolside/laguna-xs.2:free",
-        "openai/gpt-oss-120b:free"
+        "openai/gpt-oss-120b:free",
+        "qwen/qwen3-next-80b-a3b-instruct:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -538,8 +522,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 28,
+    "free_model_count": 27,
     "profile_count": 3
   },
-  "updated_at": "2026-06-09T02:26:36.399374Z"
+  "updated_at": "2026-06-10T02:39:34.739934Z"
 }
