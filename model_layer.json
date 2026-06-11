@@ -156,24 +156,6 @@
         "text"
       ]
     },
-    "moonshotai/kimi-k2.6:free": {
-      "context_length": 262144,
-      "id": "moonshotai/kimi-k2.6:free",
-      "input_modalities": [
-        "image",
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "MoonshotAI: Kimi K2.6 (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "text",
-        "vision"
-      ]
-    },
     "nex-agi/nex-n2-pro:free": {
       "context_length": 262144,
       "id": "nex-agi/nex-n2-pro:free",
@@ -478,9 +460,9 @@
         "google/gemma-4-26b-a4b-it:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
         "nex-agi/nex-n2-pro:free",
-        "moonshotai/kimi-k2.6:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
+        "nvidia/nemotron-3-nano-30b-a3b:free",
         "openai/gpt-oss-20b:free",
         "openrouter/owl-alpha"
       ],
@@ -522,8 +504,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 27,
+    "free_model_count": 26,
     "profile_count": 3
   },
-  "updated_at": "2026-06-10T02:39:34.739934Z"
+  "updated_at": "2026-06-11T02:49:18.714243Z"
 }
