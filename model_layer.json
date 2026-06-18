@@ -15,6 +15,23 @@
         "text"
       ]
     },
+    "cohere/north-mini-code:free": {
+      "context_length": 256000,
+      "id": "cohere/north-mini-code:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": true,
+      "name": "Cohere: North Mini Code (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "moderated",
+        "text"
+      ]
+    },
     "google/gemma-4-26b-a4b-it:free": {
       "context_length": 262144,
       "id": "google/gemma-4-26b-a4b-it:free",
@@ -42,13 +59,14 @@
         "text",
         "video"
       ],
-      "is_moderated": false,
+      "is_moderated": true,
       "name": "Google: Gemma 4 31B (free)",
       "output_modalities": [
         "text"
       ],
       "tags": [
         "long_context",
+        "moderated",
         "reasoning",
         "text",
         "vision"
@@ -340,14 +358,13 @@
       "input_modalities": [
         "text"
       ],
-      "is_moderated": true,
+      "is_moderated": false,
       "name": "OpenAI: gpt-oss-20b (free)",
       "output_modalities": [
         "text"
       ],
       "tags": [
         "long_context",
-        "moderated",
         "text"
       ]
     },
@@ -460,11 +477,11 @@
         "nvidia/nemotron-3-super-120b-a12b:free",
         "google/gemma-4-26b-a4b-it:free",
         "nvidia/nemotron-3-nano-30b-a3b:free",
+        "cohere/north-mini-code:free",
         "nex-agi/nex-n2-pro:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
-        "openrouter/owl-alpha",
-        "openai/gpt-oss-20b:free"
+        "openrouter/owl-alpha"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -487,12 +504,12 @@
       "candidate_model_ids": [
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "qwen/qwen3-coder:free",
+        "openai/gpt-oss-120b:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
         "google/gemma-4-31b-it:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
         "poolside/laguna-m.1:free",
-        "poolside/laguna-xs.2:free",
-        "openai/gpt-oss-120b:free"
+        "poolside/laguna-xs.2:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -504,8 +521,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 26,
+    "free_model_count": 27,
     "profile_count": 3
   },
-  "updated_at": "2026-06-17T02:52:44.104810Z"
+  "updated_at": "2026-06-18T02:48:00.932431Z"
 }
