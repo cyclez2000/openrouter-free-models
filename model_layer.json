@@ -59,13 +59,14 @@
         "text",
         "video"
       ],
-      "is_moderated": false,
+      "is_moderated": true,
       "name": "Google: Gemma 4 31B (free)",
       "output_modalities": [
         "text"
       ],
       "tags": [
         "long_context",
+        "moderated",
         "reasoning",
         "text",
         "vision"
@@ -473,25 +474,25 @@
   "profiles": {
     "chat.default.free": {
       "candidate_model_ids": [
-        "google/gemma-4-26b-a4b-it:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
-        "nex-agi/nex-n2-pro:free",
+        "google/gemma-4-26b-a4b-it:free",
+        "nvidia/nemotron-3-nano-30b-a3b:free",
         "cohere/north-mini-code:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
         "openrouter/owl-alpha",
-        "nvidia/nemotron-3-nano-30b-a3b:free"
+        "nex-agi/nex-n2-pro:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
     },
     "chat.longctx.free": {
       "candidate_model_ids": [
-        "qwen/qwen3-coder:free",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "qwen/qwen3-coder:free",
         "google/gemma-4-31b-it:free",
-        "google/gemma-4-26b-a4b-it:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
+        "google/gemma-4-26b-a4b-it:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
         "openrouter/owl-alpha"
@@ -501,14 +502,14 @@
     },
     "chat.reasoning.free": {
       "candidate_model_ids": [
-        "qwen/qwen3-coder:free",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "qwen/qwen3-coder:free",
         "google/gemma-4-31b-it:free",
-        "qwen/qwen3-next-80b-a3b-instruct:free",
+        "openai/gpt-oss-120b:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+        "qwen/qwen3-next-80b-a3b-instruct:free",
         "poolside/laguna-m.1:free",
-        "poolside/laguna-xs.2:free",
-        "openai/gpt-oss-120b:free"
+        "poolside/laguna-xs.2:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -523,5 +524,5 @@
     "free_model_count": 27,
     "profile_count": 3
   },
-  "updated_at": "2026-06-19T03:33:16.371432Z"
+  "updated_at": "2026-06-20T02:37:50.372859Z"
 }
