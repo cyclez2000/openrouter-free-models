@@ -174,24 +174,6 @@
         "text"
       ]
     },
-    "nex-agi/nex-n2-pro:free": {
-      "context_length": 262144,
-      "id": "nex-agi/nex-n2-pro:free",
-      "input_modalities": [
-        "image",
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Nex AGI: Nex-N2-Pro (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "text",
-        "vision"
-      ]
-    },
     "nousresearch/hermes-3-llama-3.1-405b:free": {
       "context_length": 131072,
       "id": "nousresearch/hermes-3-llama-3.1-405b:free",
@@ -474,14 +456,14 @@
   "profiles": {
     "chat.default.free": {
       "candidate_model_ids": [
-        "nvidia/nemotron-3-super-120b-a12b:free",
-        "google/gemma-4-26b-a4b-it:free",
         "nvidia/nemotron-3-nano-30b-a3b:free",
+        "google/gemma-4-26b-a4b-it:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "cohere/north-mini-code:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
         "openrouter/owl-alpha",
-        "cohere/north-mini-code:free",
-        "nex-agi/nex-n2-pro:free"
+        "openrouter/free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -490,9 +472,9 @@
       "candidate_model_ids": [
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "qwen/qwen3-coder:free",
-        "nvidia/nemotron-3-super-120b-a12b:free",
         "google/gemma-4-31b-it:free",
         "google/gemma-4-26b-a4b-it:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
         "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
         "openrouter/owl-alpha"
@@ -521,8 +503,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 27,
+    "free_model_count": 26,
     "profile_count": 3
   },
-  "updated_at": "2026-06-22T02:56:08.714072Z"
+  "updated_at": "2026-06-23T02:33:34.890538Z"
 }
