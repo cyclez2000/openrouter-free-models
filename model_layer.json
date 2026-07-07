@@ -451,6 +451,23 @@
         "reasoning",
         "text"
       ]
+    },
+    "tencent/hy3:free": {
+      "context_length": 262144,
+      "id": "tencent/hy3:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Tencent: Hy3 (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
     }
   },
   "profiles": {
@@ -491,7 +508,7 @@
         "poolside/laguna-m.1:free",
         "poolside/laguna-xs.2:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free"
+        "tencent/hy3:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -503,8 +520,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 26,
+    "free_model_count": 27,
     "profile_count": 3
   },
-  "updated_at": "2026-07-06T02:25:38.526429Z"
+  "updated_at": "2026-07-07T02:13:57.158528Z"
 }
