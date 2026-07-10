@@ -401,23 +401,6 @@
         "text"
       ]
     },
-    "poolside/laguna-xs.2:free": {
-      "context_length": 262144,
-      "id": "poolside/laguna-xs.2:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Poolside: Laguna XS.2 (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text"
-      ]
-    },
     "qwen/qwen3-coder:free": {
       "context_length": 1048576,
       "id": "qwen/qwen3-coder:free",
@@ -506,9 +489,9 @@
         "qwen/qwen3-coder:free",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "poolside/laguna-m.1:free",
-        "poolside/laguna-xs.2:free",
         "qwen/qwen3-next-80b-a3b-instruct:free",
-        "tencent/hy3:free"
+        "tencent/hy3:free",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -520,8 +503,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 27,
+    "free_model_count": 26,
     "profile_count": 3
   },
-  "updated_at": "2026-07-07T02:13:57.158528Z"
+  "updated_at": "2026-07-10T02:06:52.896414Z"
 }
