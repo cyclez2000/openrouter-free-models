@@ -59,14 +59,13 @@
         "text",
         "video"
       ],
-      "is_moderated": true,
+      "is_moderated": false,
       "name": "Google: Gemma 4 31B (free)",
       "output_modalities": [
         "text"
       ],
       "tags": [
         "long_context",
-        "moderated",
         "reasoning",
         "text",
         "vision"
@@ -108,37 +107,6 @@
         "long_context",
         "text",
         "vision"
-      ]
-    },
-    "liquid/lfm-2.5-1.2b-instruct:free": {
-      "context_length": 32768,
-      "id": "liquid/lfm-2.5-1.2b-instruct:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "LiquidAI: LFM2.5-1.2B-Instruct (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "text"
-      ]
-    },
-    "liquid/lfm-2.5-1.2b-thinking:free": {
-      "context_length": 32768,
-      "id": "liquid/lfm-2.5-1.2b-thinking:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "LiquidAI: LFM2.5-1.2B-Thinking (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "reasoning",
-        "text"
       ]
     },
     "meta-llama/llama-3.2-3b-instruct:free": {
@@ -316,24 +284,6 @@
         "text"
       ]
     },
-    "openai/gpt-oss-120b:free": {
-      "context_length": 131072,
-      "id": "openai/gpt-oss-120b:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": true,
-      "name": "OpenAI: gpt-oss-120b (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "moderated",
-        "reasoning",
-        "text"
-      ]
-    },
     "openai/gpt-oss-20b:free": {
       "context_length": 131072,
       "id": "openai/gpt-oss-20b:free",
@@ -456,12 +406,12 @@
   "profiles": {
     "chat.default.free": {
       "candidate_model_ids": [
-        "google/gemma-4-26b-a4b-it:free",
-        "nvidia/nemotron-3-super-120b-a12b:free",
-        "poolside/laguna-xs-2.1:free",
         "cohere/north-mini-code:free",
-        "google/lyria-3-pro-preview",
         "google/lyria-3-clip-preview",
+        "google/lyria-3-pro-preview",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "google/gemma-4-26b-a4b-it:free",
+        "poolside/laguna-xs-2.1:free",
         "nvidia/nemotron-3-nano-30b-a3b:free",
         "openrouter/free"
       ],
@@ -470,14 +420,14 @@
     },
     "chat.longctx.free": {
       "candidate_model_ids": [
-        "qwen/qwen3-coder:free",
-        "nvidia/nemotron-3-ultra-550b-a55b:free",
-        "google/gemma-4-31b-it:free",
-        "google/gemma-4-26b-a4b-it:free",
-        "nvidia/nemotron-3-super-120b-a12b:free",
-        "poolside/laguna-m.1:free",
+        "google/lyria-3-clip-preview",
         "google/lyria-3-pro-preview",
-        "google/lyria-3-clip-preview"
+        "qwen/qwen3-coder:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "google/gemma-4-26b-a4b-it:free",
+        "google/gemma-4-31b-it:free",
+        "poolside/laguna-m.1:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
@@ -487,11 +437,11 @@
         "qwen/qwen3-coder:free",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "google/gemma-4-31b-it:free",
-        "qwen/qwen3-next-80b-a3b-instruct:free",
-        "openai/gpt-oss-120b:free",
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
         "poolside/laguna-m.1:free",
-        "tencent/hy3:free"
+        "qwen/qwen3-next-80b-a3b-instruct:free",
+        "tencent/hy3:free",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+        "meta-llama/llama-3.2-3b-instruct:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -503,8 +453,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 26,
+    "free_model_count": 23,
     "profile_count": 3
   },
-  "updated_at": "2026-07-13T01:58:43.043379Z"
+  "updated_at": "2026-07-14T01:44:51.677711Z"
 }
