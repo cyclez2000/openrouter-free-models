@@ -1,20 +1,5 @@
 {
   "models": {
-    "cognitivecomputations/dolphin-mistral-24b-venice-edition:free": {
-      "context_length": 32768,
-      "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Venice: Uncensored (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "text"
-      ]
-    },
     "cohere/north-mini-code:free": {
       "context_length": 256000,
       "id": "cohere/north-mini-code:free",
@@ -107,56 +92,6 @@
         "long_context",
         "text",
         "vision"
-      ]
-    },
-    "meta-llama/llama-3.2-3b-instruct:free": {
-      "context_length": 131072,
-      "id": "meta-llama/llama-3.2-3b-instruct:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Meta: Llama 3.2 3B Instruct (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text"
-      ]
-    },
-    "meta-llama/llama-3.3-70b-instruct:free": {
-      "context_length": 131072,
-      "id": "meta-llama/llama-3.3-70b-instruct:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Meta: Llama 3.3 70B Instruct (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "text"
-      ]
-    },
-    "nousresearch/hermes-3-llama-3.1-405b:free": {
-      "context_length": 131072,
-      "id": "nousresearch/hermes-3-llama-3.1-405b:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Nous: Hermes 3 405B Instruct (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text"
       ]
     },
     "nvidia/nemotron-3-nano-30b-a3b:free": {
@@ -351,40 +286,6 @@
         "text"
       ]
     },
-    "qwen/qwen3-coder:free": {
-      "context_length": 1048576,
-      "id": "qwen/qwen3-coder:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Qwen: Qwen3 Coder 480B A35B (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text"
-      ]
-    },
-    "qwen/qwen3-next-80b-a3b-instruct:free": {
-      "context_length": 262144,
-      "id": "qwen/qwen3-next-80b-a3b-instruct:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Qwen: Qwen3 Next 80B A3B Instruct (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text"
-      ]
-    },
     "tencent/hy3:free": {
       "context_length": 262144,
       "id": "tencent/hy3:free",
@@ -422,26 +323,25 @@
       "candidate_model_ids": [
         "google/lyria-3-clip-preview",
         "google/lyria-3-pro-preview",
-        "qwen/qwen3-coder:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "google/gemma-4-26b-a4b-it:free",
         "google/gemma-4-31b-it:free",
-        "poolside/laguna-m.1:free"
+        "poolside/laguna-m.1:free",
+        "poolside/laguna-xs-2.1:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
     },
     "chat.reasoning.free": {
       "candidate_model_ids": [
-        "qwen/qwen3-coder:free",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "google/gemma-4-31b-it:free",
         "poolside/laguna-m.1:free",
-        "qwen/qwen3-next-80b-a3b-instruct:free",
         "tencent/hy3:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-        "meta-llama/llama-3.2-3b-instruct:free"
+        "nvidia/nemotron-nano-12b-v2-vl:free",
+        "nvidia/nemotron-nano-9b-v2:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -453,8 +353,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 23,
+    "free_model_count": 17,
     "profile_count": 3
   },
-  "updated_at": "2026-07-14T01:44:51.677711Z"
+  "updated_at": "2026-07-20T03:25:38.976735Z"
 }
