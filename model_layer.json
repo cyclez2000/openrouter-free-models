@@ -285,23 +285,6 @@
         "long_context",
         "text"
       ]
-    },
-    "tencent/hy3:free": {
-      "context_length": 262144,
-      "id": "tencent/hy3:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Tencent: Hy3 (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text"
-      ]
     }
   },
   "profiles": {
@@ -338,7 +321,6 @@
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "google/gemma-4-31b-it:free",
         "poolside/laguna-m.1:free",
-        "tencent/hy3:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
         "nvidia/nemotron-nano-12b-v2-vl:free",
         "nvidia/nemotron-nano-9b-v2:free"
@@ -353,8 +335,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 17,
+    "free_model_count": 16,
     "profile_count": 3
   },
-  "updated_at": "2026-07-20T03:25:38.976735Z"
+  "updated_at": "2026-07-21T01:53:05.562679Z"
 }
