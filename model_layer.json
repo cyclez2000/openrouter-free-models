@@ -269,23 +269,6 @@
         "vision"
       ]
     },
-    "poolside/laguna-m.1:free": {
-      "context_length": 262144,
-      "id": "poolside/laguna-m.1:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Poolside: Laguna M.1 (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text"
-      ]
-    },
     "poolside/laguna-s-2.1:free": {
       "context_length": 262144,
       "id": "poolside/laguna-s-2.1:free",
@@ -343,7 +326,7 @@
         "google/gemma-4-31b-it:free",
         "inclusionai/ling-3.0-flash:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
-        "poolside/laguna-m.1:free"
+        "poolside/laguna-s-2.1:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
@@ -352,7 +335,6 @@
       "candidate_model_ids": [
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "google/gemma-4-31b-it:free",
-        "poolside/laguna-m.1:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
         "nvidia/nemotron-nano-12b-v2-vl:free",
         "nvidia/nemotron-nano-9b-v2:free"
@@ -367,8 +349,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 18,
+    "free_model_count": 17,
     "profile_count": 3
   },
-  "updated_at": "2026-07-24T01:55:11.151647Z"
+  "updated_at": "2026-07-29T01:50:12.783505Z"
 }
