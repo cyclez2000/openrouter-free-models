@@ -110,6 +110,23 @@
         "text"
       ]
     },
+    "liquid/lfm-2.5-2.6b:free": {
+      "context_length": 128000,
+      "id": "liquid/lfm-2.5-2.6b:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "LiquidAI: LFM2.5-2.6B (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
     "nvidia/nemotron-3-nano-30b-a3b:free": {
       "context_length": 256000,
       "id": "nvidia/nemotron-3-nano-30b-a3b:free",
@@ -196,6 +213,22 @@
         "long_context",
         "text",
         "vision"
+      ]
+    },
+    "nvidia/nemotron-3.5-lightning:free": {
+      "context_length": 1000000,
+      "id": "nvidia/nemotron-3.5-lightning:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "NVIDIA: Nemotron 3.5 Lightning (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "text"
       ]
     },
     "nvidia/nemotron-nano-12b-v2-vl:free": {
@@ -308,11 +341,11 @@
         "cohere/north-mini-code:free",
         "google/lyria-3-clip-preview",
         "google/lyria-3-pro-preview",
+        "nvidia/nemotron-3.5-lightning:free",
         "google/gemma-4-26b-a4b-it:free",
         "inclusionai/ling-3.0-tiny:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
-        "poolside/laguna-s-2.1:free",
-        "poolside/laguna-xs-2.1:free"
+        "poolside/laguna-s-2.1:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -322,11 +355,11 @@
         "google/lyria-3-clip-preview",
         "google/lyria-3-pro-preview",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "nvidia/nemotron-3.5-lightning:free",
         "google/gemma-4-26b-a4b-it:free",
         "google/gemma-4-31b-it:free",
         "inclusionai/ling-3.0-tiny:free",
-        "nvidia/nemotron-3-super-120b-a12b:free",
-        "poolside/laguna-s-2.1:free"
+        "nvidia/nemotron-3-super-120b-a12b:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
@@ -336,6 +369,7 @@
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "google/gemma-4-31b-it:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+        "liquid/lfm-2.5-2.6b:free",
         "nvidia/nemotron-nano-12b-v2-vl:free",
         "nvidia/nemotron-nano-9b-v2:free"
       ],
@@ -349,8 +383,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 17,
+    "free_model_count": 19,
     "profile_count": 3
   },
-  "updated_at": "2026-08-07T02:12:06.115456Z"
+  "updated_at": "2026-08-12T01:11:45.323806Z"
 }
