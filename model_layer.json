@@ -94,22 +94,6 @@
         "vision"
       ]
     },
-    "inclusionai/ling-3.0-tiny:free": {
-      "context_length": 262144,
-      "id": "inclusionai/ling-3.0-tiny:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "inclusionAI: Ling 3.0 Tiny (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "text"
-      ]
-    },
     "liquid/lfm-2.5-2.6b:free": {
       "context_length": 128000,
       "id": "liquid/lfm-2.5-2.6b:free",
@@ -343,9 +327,9 @@
         "google/lyria-3-pro-preview",
         "nvidia/nemotron-3.5-lightning:free",
         "google/gemma-4-26b-a4b-it:free",
-        "inclusionai/ling-3.0-tiny:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
-        "poolside/laguna-s-2.1:free"
+        "poolside/laguna-s-2.1:free",
+        "poolside/laguna-xs-2.1:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -358,8 +342,8 @@
         "nvidia/nemotron-3.5-lightning:free",
         "google/gemma-4-26b-a4b-it:free",
         "google/gemma-4-31b-it:free",
-        "inclusionai/ling-3.0-tiny:free",
-        "nvidia/nemotron-3-super-120b-a12b:free"
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "poolside/laguna-s-2.1:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
@@ -383,8 +367,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 19,
+    "free_model_count": 18,
     "profile_count": 3
   },
-  "updated_at": "2026-08-12T01:11:45.323806Z"
+  "updated_at": "2026-08-14T01:12:54.090693Z"
 }
