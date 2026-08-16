@@ -17,6 +17,24 @@
         "text"
       ]
     },
+    "dots-studio/dots-3-note-preview:free": {
+      "context_length": 512000,
+      "id": "dots-studio/dots-3-note-preview:free",
+      "input_modalities": [
+        "image",
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Dots Studio: Dots3-Note Preview (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "text",
+        "vision"
+      ]
+    },
     "google/gemma-4-26b-a4b-it:free": {
       "context_length": 262144,
       "id": "google/gemma-4-26b-a4b-it:free",
@@ -326,10 +344,10 @@
         "google/lyria-3-clip-preview",
         "google/lyria-3-pro-preview",
         "nvidia/nemotron-3.5-lightning:free",
+        "dots-studio/dots-3-note-preview:free",
         "google/gemma-4-26b-a4b-it:free",
         "nvidia/nemotron-3-super-120b-a12b:free",
-        "poolside/laguna-s-2.1:free",
-        "poolside/laguna-xs-2.1:free"
+        "poolside/laguna-s-2.1:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -340,10 +358,10 @@
         "google/lyria-3-pro-preview",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "nvidia/nemotron-3.5-lightning:free",
+        "dots-studio/dots-3-note-preview:free",
         "google/gemma-4-26b-a4b-it:free",
         "google/gemma-4-31b-it:free",
-        "nvidia/nemotron-3-super-120b-a12b:free",
-        "poolside/laguna-s-2.1:free"
+        "nvidia/nemotron-3-super-120b-a12b:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
@@ -367,8 +385,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 18,
+    "free_model_count": 19,
     "profile_count": 3
   },
-  "updated_at": "2026-08-14T01:12:54.090693Z"
+  "updated_at": "2026-08-16T00:47:54.886763Z"
 }
