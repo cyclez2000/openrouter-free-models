@@ -113,7 +113,7 @@
       ]
     },
     "liquid/lfm-2.5-2.6b:free": {
-      "context_length": 128000,
+      "context_length": 65536,
       "id": "liquid/lfm-2.5-2.6b:free",
       "input_modalities": [
         "text"
@@ -270,22 +270,6 @@
         "text"
       ]
     },
-    "openai/gpt-oss-20b:free": {
-      "context_length": 131072,
-      "id": "openai/gpt-oss-20b:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "OpenAI: gpt-oss-20b (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "text"
-      ]
-    },
     "openrouter/free": {
       "context_length": 200000,
       "id": "openrouter/free",
@@ -356,6 +340,46 @@
         "vision"
       ]
     },
+    "thinkingmachines/inkling-small:free": {
+      "context_length": 262144,
+      "id": "thinkingmachines/inkling-small:free",
+      "input_modalities": [
+        "audio",
+        "image",
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Thinking Machines: Inkling Small (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text",
+        "vision"
+      ]
+    },
+    "thinkingmachines/inkling:free": {
+      "context_length": 262144,
+      "id": "thinkingmachines/inkling:free",
+      "input_modalities": [
+        "audio",
+        "image",
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Thinking Machines: Inkling (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text",
+        "vision"
+      ]
+    },
     "z-ai/glm-5.2:free": {
       "context_length": 256000,
       "id": "z-ai/glm-5.2:free",
@@ -408,11 +432,11 @@
         "stealth/ox-alpha",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "google/gemma-4-31b-it:free",
+        "thinkingmachines/inkling-small:free",
+        "thinkingmachines/inkling:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
         "z-ai/glm-5.2:free",
-        "liquid/lfm-2.5-2.6b:free",
-        "nvidia/nemotron-nano-12b-v2-vl:free",
-        "nvidia/nemotron-nano-9b-v2:free"
+        "nvidia/nemotron-nano-12b-v2-vl:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -424,8 +448,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 21,
+    "free_model_count": 22,
     "profile_count": 3
   },
-  "updated_at": "2026-08-21T00:48:27.541399Z"
+  "updated_at": "2026-08-22T00:44:16.162137Z"
 }
