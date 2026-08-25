@@ -129,22 +129,6 @@
         "text"
       ]
     },
-    "nvidia/nemotron-3-nano-30b-a3b:free": {
-      "context_length": 256000,
-      "id": "nvidia/nemotron-3-nano-30b-a3b:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "NVIDIA: Nemotron 3 Nano 30B A3B (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "text"
-      ]
-    },
     "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": {
       "context_length": 256000,
       "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
@@ -233,43 +217,6 @@
         "text"
       ]
     },
-    "nvidia/nemotron-nano-12b-v2-vl:free": {
-      "context_length": 128000,
-      "id": "nvidia/nemotron-nano-12b-v2-vl:free",
-      "input_modalities": [
-        "image",
-        "text",
-        "video"
-      ],
-      "is_moderated": false,
-      "name": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text",
-        "vision"
-      ]
-    },
-    "nvidia/nemotron-nano-9b-v2:free": {
-      "context_length": 128000,
-      "id": "nvidia/nemotron-nano-9b-v2:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "NVIDIA: Nemotron Nano 9B V2 (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text"
-      ]
-    },
     "openrouter/free": {
       "context_length": 200000,
       "id": "openrouter/free",
@@ -341,7 +288,7 @@
       ]
     },
     "thinkingmachines/inkling-small:free": {
-      "context_length": 262144,
+      "context_length": 1048576,
       "id": "thinkingmachines/inkling-small:free",
       "input_modalities": [
         "audio",
@@ -361,7 +308,7 @@
       ]
     },
     "thinkingmachines/inkling:free": {
-      "context_length": 262144,
+      "context_length": 1048576,
       "id": "thinkingmachines/inkling:free",
       "input_modalities": [
         "audio",
@@ -418,11 +365,11 @@
         "google/lyria-3-clip-preview",
         "google/lyria-3-pro-preview",
         "stealth/ox-alpha",
+        "thinkingmachines/inkling-small:free",
+        "thinkingmachines/inkling:free",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "nvidia/nemotron-3.5-lightning:free",
-        "dots-studio/dots-3-note-preview:free",
-        "google/gemma-4-26b-a4b-it:free",
-        "google/gemma-4-31b-it:free"
+        "dots-studio/dots-3-note-preview:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
@@ -430,13 +377,13 @@
     "chat.reasoning.free": {
       "candidate_model_ids": [
         "stealth/ox-alpha",
-        "nvidia/nemotron-3-ultra-550b-a55b:free",
-        "google/gemma-4-31b-it:free",
         "thinkingmachines/inkling-small:free",
         "thinkingmachines/inkling:free",
+        "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "google/gemma-4-31b-it:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
         "z-ai/glm-5.2:free",
-        "nvidia/nemotron-nano-12b-v2-vl:free"
+        "liquid/lfm-2.5-2.6b:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -448,8 +395,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 22,
+    "free_model_count": 19,
     "profile_count": 3
   },
-  "updated_at": "2026-08-22T00:44:16.162137Z"
+  "updated_at": "2026-08-25T00:45:42.393080Z"
 }
