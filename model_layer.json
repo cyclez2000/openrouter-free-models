@@ -129,6 +129,41 @@
         "text"
       ]
     },
+    "minimax/minimax-m2.7:free": {
+      "context_length": 196608,
+      "id": "minimax/minimax-m2.7:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "MiniMax: MiniMax M2.7 (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "text"
+      ]
+    },
+    "minimax/minimax-m3:free": {
+      "context_length": 1048576,
+      "id": "minimax/minimax-m3:free",
+      "input_modalities": [
+        "image",
+        "text",
+        "video"
+      ],
+      "is_moderated": false,
+      "name": "MiniMax: MiniMax M3 (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "text",
+        "vision"
+      ]
+    },
     "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": {
       "context_length": 256000,
       "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
@@ -351,11 +386,11 @@
         "cohere/north-mini-code:free",
         "google/lyria-3-clip-preview",
         "google/lyria-3-pro-preview",
+        "minimax/minimax-m3:free",
         "nvidia/nemotron-3.5-lightning:free",
         "dots-studio/dots-3-note-preview:free",
         "google/gemma-4-26b-a4b-it:free",
-        "nvidia/nemotron-3-super-120b-a12b:free",
-        "poolside/laguna-s-2.1:free"
+        "nvidia/nemotron-3-super-120b-a12b:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -364,12 +399,12 @@
       "candidate_model_ids": [
         "google/lyria-3-clip-preview",
         "google/lyria-3-pro-preview",
+        "minimax/minimax-m3:free",
         "stealth/ox-alpha",
         "thinkingmachines/inkling-small:free",
         "thinkingmachines/inkling:free",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
-        "nvidia/nemotron-3.5-lightning:free",
-        "dots-studio/dots-3-note-preview:free"
+        "nvidia/nemotron-3.5-lightning:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
@@ -395,8 +430,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 19,
+    "free_model_count": 21,
     "profile_count": 3
   },
-  "updated_at": "2026-08-25T00:45:42.393080Z"
+  "updated_at": "2026-08-26T00:47:05.988100Z"
 }
