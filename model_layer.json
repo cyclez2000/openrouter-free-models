@@ -302,26 +302,6 @@
         "text"
       ]
     },
-    "stealth/ox-alpha": {
-      "context_length": 1048576,
-      "id": "stealth/ox-alpha",
-      "input_modalities": [
-        "image",
-        "text",
-        "video"
-      ],
-      "is_moderated": false,
-      "name": "Ox Alpha",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text",
-        "vision"
-      ]
-    },
     "thinkingmachines/inkling-small:free": {
       "context_length": 1048576,
       "id": "thinkingmachines/inkling-small:free",
@@ -400,18 +380,17 @@
         "google/lyria-3-clip-preview",
         "google/lyria-3-pro-preview",
         "minimax/minimax-m3:free",
-        "stealth/ox-alpha",
         "thinkingmachines/inkling-small:free",
         "thinkingmachines/inkling:free",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
-        "nvidia/nemotron-3.5-lightning:free"
+        "nvidia/nemotron-3.5-lightning:free",
+        "dots-studio/dots-3-note-preview:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
     },
     "chat.reasoning.free": {
       "candidate_model_ids": [
-        "stealth/ox-alpha",
         "thinkingmachines/inkling-small:free",
         "thinkingmachines/inkling:free",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
@@ -430,8 +409,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 21,
+    "free_model_count": 20,
     "profile_count": 3
   },
-  "updated_at": "2026-08-26T00:47:05.988100Z"
+  "updated_at": "2026-08-27T06:18:18.022298Z"
 }
