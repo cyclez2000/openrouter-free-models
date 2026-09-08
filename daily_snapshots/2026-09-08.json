@@ -1,6 +1,26 @@
 {
-  "last_updated": "2026-09-08T02:16:46.297337Z",
-  "model_count": 19,
+  "date_utc": "2026-09-08",
+  "model_ids": [
+    "cohere/north-mini-code:free",
+    "dots-studio/dots-3-note-preview:free",
+    "google/gemma-4-26b-a4b-it:free",
+    "google/gemma-4-31b-it:free",
+    "google/lyria-3-clip-preview",
+    "google/lyria-3-pro-preview",
+    "inclusionai/ling-3.0-flash-fin:free",
+    "inclusionai/ling-3.0-flash-sante:free",
+    "liquid/lfm-2.5-2.6b:free",
+    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "nvidia/nemotron-3.5-content-safety:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "openrouter/free",
+    "poolside/laguna-s-2.1:free",
+    "poolside/laguna-xs-2.1:free",
+    "thinkingmachines/inkling-small:free",
+    "thinkingmachines/inkling:free"
+  ],
   "models": {
     "cohere/north-mini-code:free": {
       "architecture": {
@@ -533,5 +553,11 @@
         "max_completion_tokens": 262144
       }
     }
-  }
+  },
+  "new_model_ids": [],
+  "removed_model_ids": [
+    "minimax/minimax-m2.7:free",
+    "minimax/minimax-m3:free"
+  ],
+  "total_free_models": 19
 }
