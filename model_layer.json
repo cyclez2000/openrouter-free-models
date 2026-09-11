@@ -144,6 +144,25 @@
         "text"
       ]
     },
+    "inclusionai/ling-3.0-flash-vl:free": {
+      "context_length": 262144,
+      "id": "inclusionai/ling-3.0-flash-vl:free",
+      "input_modalities": [
+        "image",
+        "text",
+        "video"
+      ],
+      "is_moderated": false,
+      "name": "inclusionAI: Ling 3.0 Flash VL (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "text",
+        "vision"
+      ]
+    },
     "liquid/lfm-2.5-2.6b:free": {
       "context_length": 65536,
       "id": "liquid/lfm-2.5-2.6b:free",
@@ -424,8 +443,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 21,
+    "free_model_count": 22,
     "profile_count": 3
   },
-  "updated_at": "2026-09-10T02:19:04.202042Z"
+  "updated_at": "2026-09-11T02:14:45.016333Z"
 }
