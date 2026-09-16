@@ -393,6 +393,22 @@
         "text",
         "vision"
       ]
+    },
+    "z-ai/glm-5.2:free": {
+      "context_length": 32768,
+      "id": "z-ai/glm-5.2:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Z.ai: GLM 5.2 (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "reasoning",
+        "text"
+      ]
     }
   },
   "profiles": {
@@ -431,7 +447,8 @@
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "google/gemma-4-31b-it:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-        "liquid/lfm-2.5-2.6b:free"
+        "liquid/lfm-2.5-2.6b:free",
+        "z-ai/glm-5.2:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -443,8 +460,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 22,
+    "free_model_count": 23,
     "profile_count": 3
   },
-  "updated_at": "2026-09-11T02:14:45.016333Z"
+  "updated_at": "2026-09-16T02:34:45.211178Z"
 }
