@@ -354,6 +354,24 @@
         "text"
       ]
     },
+    "stealth/union-alpha": {
+      "context_length": 262144,
+      "id": "stealth/union-alpha",
+      "input_modalities": [
+        "image",
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "Union Alpha",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "text",
+        "vision"
+      ]
+    },
     "thinkingmachines/inkling-small:free": {
       "context_length": 1048576,
       "id": "thinkingmachines/inkling-small:free",
@@ -460,8 +478,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 23,
+    "free_model_count": 24,
     "profile_count": 3
   },
-  "updated_at": "2026-09-16T02:34:45.211178Z"
+  "updated_at": "2026-09-17T02:38:56.041476Z"
 }
