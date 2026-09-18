@@ -17,6 +17,23 @@
         "text"
       ]
     },
+    "deepseek/deepseek-v4-flash-0731:free": {
+      "context_length": 1048576,
+      "id": "deepseek/deepseek-v4-flash-0731:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "DeepSeek: DeepSeek V4 Flash 0731 (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text"
+      ]
+    },
     "dots-studio/dots-3-note-preview:free": {
       "context_length": 512000,
       "id": "dots-studio/dots-3-note-preview:free",
@@ -354,20 +371,22 @@
         "text"
       ]
     },
-    "stealth/union-alpha": {
+    "qwen/qwen3.8-27b:free": {
       "context_length": 262144,
-      "id": "stealth/union-alpha",
+      "id": "qwen/qwen3.8-27b:free",
       "input_modalities": [
         "image",
-        "text"
+        "text",
+        "video"
       ],
       "is_moderated": false,
-      "name": "Union Alpha",
+      "name": "Qwen: Qwen3.8 27B (free)",
       "output_modalities": [
         "text"
       ],
       "tags": [
         "long_context",
+        "reasoning",
         "text",
         "vision"
       ]
@@ -446,27 +465,28 @@
     },
     "chat.longctx.free": {
       "candidate_model_ids": [
+        "deepseek/deepseek-v4-flash-0731:free",
         "google/lyria-3-clip-preview",
         "google/lyria-3-pro-preview",
         "thinkingmachines/inkling-small:free",
         "thinkingmachines/inkling:free",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "nvidia/nemotron-3.5-lightning:free",
-        "dots-studio/dots-3-note-preview:free",
-        "google/gemma-4-26b-a4b-it:free"
+        "dots-studio/dots-3-note-preview:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
     },
     "chat.reasoning.free": {
       "candidate_model_ids": [
+        "deepseek/deepseek-v4-flash-0731:free",
         "thinkingmachines/inkling-small:free",
         "thinkingmachines/inkling:free",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "google/gemma-4-31b-it:free",
+        "qwen/qwen3.8-27b:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-        "liquid/lfm-2.5-2.6b:free",
-        "z-ai/glm-5.2:free"
+        "liquid/lfm-2.5-2.6b:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -478,8 +498,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 24,
+    "free_model_count": 25,
     "profile_count": 3
   },
-  "updated_at": "2026-09-17T02:38:56.041476Z"
+  "updated_at": "2026-09-18T02:26:17.441970Z"
 }
