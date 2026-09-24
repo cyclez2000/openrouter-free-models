@@ -144,25 +144,6 @@
         "text"
       ]
     },
-    "inclusionai/ling-3.0-flash-vl:free": {
-      "context_length": 262144,
-      "id": "inclusionai/ling-3.0-flash-vl:free",
-      "input_modalities": [
-        "image",
-        "text",
-        "video"
-      ],
-      "is_moderated": false,
-      "name": "inclusionAI: Ling 3.0 Flash VL (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "text",
-        "vision"
-      ]
-    },
     "liquid/lfm-2.5-2.6b:free": {
       "context_length": 65536,
       "id": "liquid/lfm-2.5-2.6b:free",
@@ -374,6 +355,26 @@
         "vision"
       ]
     },
+    "stealth/space-bunny-alpha": {
+      "context_length": 1000000,
+      "id": "stealth/space-bunny-alpha",
+      "input_modalities": [
+        "image",
+        "text",
+        "video"
+      ],
+      "is_moderated": false,
+      "name": "Space Bunny Alpha",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "reasoning",
+        "text",
+        "vision"
+      ]
+    },
     "thinkingmachines/inkling-small:free": {
       "context_length": 1048576,
       "id": "thinkingmachines/inkling-small:free",
@@ -454,8 +455,8 @@
         "thinkingmachines/inkling:free",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "nvidia/nemotron-3.5-lightning:free",
-        "dots-studio/dots-3-note-preview:free",
-        "google/gemma-4-26b-a4b-it:free"
+        "stealth/space-bunny-alpha",
+        "dots-studio/dots-3-note-preview:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
@@ -465,11 +466,11 @@
         "thinkingmachines/inkling-small:free",
         "thinkingmachines/inkling:free",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "stealth/space-bunny-alpha",
         "google/gemma-4-31b-it:free",
         "qwen/qwen3.8-27b:free",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-        "liquid/lfm-2.5-2.6b:free",
-        "z-ai/glm-5.2:free"
+        "liquid/lfm-2.5-2.6b:free"
       ],
       "description": "Reasoning-focused free chat profile.",
       "selection": "ordered-fallback"
@@ -484,5 +485,5 @@
     "free_model_count": 24,
     "profile_count": 3
   },
-  "updated_at": "2026-09-21T02:33:44.100142Z"
+  "updated_at": "2026-09-24T02:25:50.450948Z"
 }
