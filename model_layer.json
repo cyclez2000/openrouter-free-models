@@ -112,22 +112,6 @@
         "vision"
       ]
     },
-    "inclusionai/ling-3.0-flash-fin:free": {
-      "context_length": 262144,
-      "id": "inclusionai/ling-3.0-flash-fin:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "inclusionAI: Ling 3.0 Flash Fin (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "text"
-      ]
-    },
     "inclusionai/ling-3.0-flash-sante:free": {
       "context_length": 262144,
       "id": "inclusionai/ling-3.0-flash-sante:free",
@@ -389,8 +373,8 @@
         "nvidia/nemotron-3.5-lightning:free",
         "dots-studio/dots-3-note-preview:free",
         "google/gemma-4-26b-a4b-it:free",
-        "inclusionai/ling-3.0-flash-fin:free",
-        "inclusionai/ling-3.0-flash-sante:free"
+        "inclusionai/ling-3.0-flash-sante:free",
+        "nvidia/nemotron-3-super-120b-a12b:free"
       ],
       "description": "General-purpose free chat profile.",
       "selection": "ordered-fallback"
@@ -430,8 +414,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 21,
+    "free_model_count": 20,
     "profile_count": 3
   },
-  "updated_at": "2026-09-26T02:45:06.271422Z"
+  "updated_at": "2026-09-29T03:28:48.777672Z"
 }
