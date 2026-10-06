@@ -1,6 +1,27 @@
 {
-  "last_updated": "2026-10-06T04:02:53.443885Z",
-  "model_count": 20,
+  "date_utc": "2026-10-06",
+  "model_ids": [
+    "apodex/apodex-1.1-mini:free",
+    "cohere/north-mini-code:free",
+    "dots-studio/dots-3-note-preview:free",
+    "google/gemma-4-26b-a4b-it:free",
+    "google/gemma-4-31b-it:free",
+    "google/lyria-3-clip-preview",
+    "google/lyria-3-pro-preview",
+    "inclusionai/ling-3.0-flash-sante:free",
+    "inclusionai/ling-3.1-flash",
+    "liquid/lfm-2.5-2.6b:free",
+    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "nvidia/nemotron-3.5-content-safety:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "openrouter/free",
+    "poolside/laguna-s-2.1:free",
+    "poolside/laguna-xs-2.1:free",
+    "thinkingmachines/inkling-small:free",
+    "thinkingmachines/inkling:free"
+  ],
   "models": {
     "apodex/apodex-1.1-mini:free": {
       "architecture": {
@@ -560,5 +581,11 @@
         "max_completion_tokens": 262144
       }
     }
-  }
+  },
+  "new_model_ids": [],
+  "removed_model_ids": [
+    "qwen/qwen3.8-27b:free",
+    "stealth/space-bunny-alpha"
+  ],
+  "total_free_models": 20
 }
