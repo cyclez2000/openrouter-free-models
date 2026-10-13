@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-12T03:30:27.644925Z",
+  "last_updated": "2026-10-13T04:44:55.421981Z",
   "model_count": 19,
   "models": {
     "apodex/apodex-1.1-mini:free": {
@@ -224,7 +224,7 @@
       "top_provider": {
         "context_length": 262144,
         "is_moderated": false,
-        "max_completion_tokens": 32768
+        "max_completion_tokens": 235929
       }
     },
     "liquid/lfm-2.5-2.6b:free": {
