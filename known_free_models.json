@@ -1,34 +1,7 @@
 {
-  "last_updated": "2026-10-13T04:44:55.421981Z",
-  "model_count": 19,
+  "last_updated": "2026-10-14T02:52:58.692781Z",
+  "model_count": 17,
   "models": {
-    "apodex/apodex-1.1-mini:free": {
-      "architecture": {
-        "input_modalities": [
-          "text"
-        ],
-        "instruct_type": null,
-        "modality": "text->text",
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other"
-      },
-      "context_length": 262144,
-      "description": "Apodex 1.1 Mini is a reasoning-first model from Apodex, built for complex, long-horizon research and forecasting tasks. It works directly with files, data, code, and tools to produce verifiable results,...",
-      "id": "apodex/apodex-1.1-mini:free",
-      "name": "Apodex: Apodex 1.1 Mini (free)",
-      "per_request_limits": null,
-      "pricing": {
-        "completion": "0",
-        "prompt": "0"
-      },
-      "top_provider": {
-        "context_length": 262144,
-        "is_moderated": false,
-        "max_completion_tokens": 235929
-      }
-    },
     "cohere/north-mini-code:free": {
       "architecture": {
         "input_modalities": [
@@ -198,33 +171,6 @@
         "context_length": 1048576,
         "is_moderated": false,
         "max_completion_tokens": 65536
-      }
-    },
-    "inclusionai/ling-3.1-flash": {
-      "architecture": {
-        "input_modalities": [
-          "text"
-        ],
-        "instruct_type": null,
-        "modality": "text->text",
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other"
-      },
-      "context_length": 262144,
-      "description": "Ling 3.1 Flash is a hybrid reasoning mixture-of-experts model from inclusionAI, with 25B active parameters out of 560B total.",
-      "id": "inclusionai/ling-3.1-flash",
-      "name": "inclusionAI: Ling 3.1 Flash",
-      "per_request_limits": null,
-      "pricing": {
-        "completion": "0",
-        "prompt": "0"
-      },
-      "top_provider": {
-        "context_length": 262144,
-        "is_moderated": false,
-        "max_completion_tokens": 235929
       }
     },
     "liquid/lfm-2.5-2.6b:free": {

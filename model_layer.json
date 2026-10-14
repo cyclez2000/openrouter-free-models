@@ -1,22 +1,5 @@
 {
   "models": {
-    "apodex/apodex-1.1-mini:free": {
-      "context_length": 262144,
-      "id": "apodex/apodex-1.1-mini:free",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "Apodex: Apodex 1.1 Mini (free)",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text"
-      ]
-    },
     "cohere/north-mini-code:free": {
       "context_length": 256000,
       "id": "cohere/north-mini-code:free",
@@ -127,23 +110,6 @@
         "long_context",
         "text",
         "vision"
-      ]
-    },
-    "inclusionai/ling-3.1-flash": {
-      "context_length": 262144,
-      "id": "inclusionai/ling-3.1-flash",
-      "input_modalities": [
-        "text"
-      ],
-      "is_moderated": false,
-      "name": "inclusionAI: Ling 3.1 Flash",
-      "output_modalities": [
-        "text"
-      ],
-      "tags": [
-        "long_context",
-        "reasoning",
-        "text"
       ]
     },
     "liquid/lfm-2.5-2.6b:free": {
@@ -366,7 +332,7 @@
         "nvidia/nemotron-3-ultra-550b-a55b:free",
         "nvidia/nemotron-3.5-lightning:free",
         "dots-studio/dots-3-note-preview:free",
-        "apodex/apodex-1.1-mini:free"
+        "google/gemma-4-26b-a4b-it:free"
       ],
       "description": "Long-context free chat profile.",
       "selection": "ordered-fallback"
@@ -376,9 +342,7 @@
         "thinkingmachines/inkling-small:free",
         "thinkingmachines/inkling:free",
         "nvidia/nemotron-3-ultra-550b-a55b:free",
-        "apodex/apodex-1.1-mini:free",
         "google/gemma-4-31b-it:free",
-        "inclusionai/ling-3.1-flash",
         "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
         "liquid/lfm-2.5-2.6b:free"
       ],
@@ -392,8 +356,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 19,
+    "free_model_count": 17,
     "profile_count": 3
   },
-  "updated_at": "2026-10-09T03:50:40.249491Z"
+  "updated_at": "2026-10-14T02:52:58.822299Z"
 }
