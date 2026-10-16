@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-15T02:32:04.492480Z",
-  "model_count": 17,
+  "last_updated": "2026-10-16T02:26:45.598361Z",
+  "model_count": 18,
   "models": {
     "cohere/north-mini-code:free": {
       "architecture": {
@@ -337,6 +337,35 @@
         "context_length": 1000000,
         "is_moderated": false,
         "max_completion_tokens": 65536
+      }
+    },
+    "nvidia/nemotron-3.5-super-vl:free": {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "context_length": 1000000,
+      "description": "NVIDIA Nemotron 3.5 Super VL is an open multimodal mixture-of-experts model from NVIDIA, with 12B active parameters out of 120B total. It takes text, images, documents, GUI screenshots, and video...",
+      "id": "nvidia/nemotron-3.5-super-vl:free",
+      "name": "NVIDIA: Nemotron 3.5 Super VL (free)",
+      "per_request_limits": null,
+      "pricing": {
+        "completion": "0",
+        "prompt": "0"
+      },
+      "top_provider": {
+        "context_length": 1000000,
+        "is_moderated": false,
+        "max_completion_tokens": 131072
       }
     },
     "openrouter/free": {
