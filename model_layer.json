@@ -325,6 +325,22 @@
         "text",
         "vision"
       ]
+    },
+    "xingchen-agi/xing4.0-29b-a4b:free": {
+      "context_length": 262144,
+      "id": "xingchen-agi/xing4.0-29b-a4b:free",
+      "input_modalities": [
+        "text"
+      ],
+      "is_moderated": false,
+      "name": "XingChen: Xing4.0 29B A4B (free)",
+      "output_modalities": [
+        "text"
+      ],
+      "tags": [
+        "long_context",
+        "text"
+      ]
     }
   },
   "profiles": {
@@ -375,8 +391,8 @@
     "provider": "openrouter"
   },
   "stats": {
-    "free_model_count": 18,
+    "free_model_count": 19,
     "profile_count": 3
   },
-  "updated_at": "2026-10-16T02:26:45.704875Z"
+  "updated_at": "2026-10-17T02:19:13.050056Z"
 }
